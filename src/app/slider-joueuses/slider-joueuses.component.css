@@ -1,0 +1,13 @@
+#carouselExampleIndicators{
+    height:300px;
+    
+}
+
+.carousel-item{
+    height: 300px;
+    background-color: grey;
+}
+
+.car{
+    width: 100%;
+}

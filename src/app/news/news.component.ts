@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news.component.css'],
 })
 export class NewsComponent implements OnInit {
-  testArticles: Object[] = [
+  Articles: Object[] = [
     {
       link: '#',
       img: '../../assets/img/article1.jpg',

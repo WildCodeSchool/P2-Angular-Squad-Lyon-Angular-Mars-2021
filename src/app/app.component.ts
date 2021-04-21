@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directFeminin';
+  image1:string="";
+  image2:string="";
+  
+
 }

@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewsComponent } from './news/news.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlesListComponent
+    NewsComponent,
+    NavBarComponent,
+    ArticlesListComponent,
   ],
-  imports: [
-    BrowserModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

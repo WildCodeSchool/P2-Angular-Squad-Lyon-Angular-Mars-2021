@@ -1,75 +1,20 @@
 .news {
   display: flex;
   flex-direction: column;
-  background-color: #696969;
-  font-family: Roboto;
-  padding-bottom: 5rem;
 }
 h2 {
   margin-top: 1rem;
   text-align: center;
-  color: white;
 }
 a {
   text-decoration: none;
   color: black;
 }
 .hr-news {
-  margin-top: -0.1rem;
   text-align: center;
   border: 2px solid red;
   width: 5%;
 }
-/* Filters */
-.filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-select {
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 2px 25px 2px 2px;
-  cursor: pointer;
-  height: 2.5rem;
-  border: none;
-  appearance: none;
-}
-
-.select-container {
-  position: relative;
-  background-color: #fff;
-  border-radius: 5px;
-  overflow: hidden;
-}
-#left {
-  margin-right: 1rem;
-}
-#right {
-  margin-left: 1rem;
-}
-
-/* CSS pour l'arrow */
-.select-container::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  margin-top: -3px;
-  right: 0.75em;
-  display: block;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-top-color: #444;
-  border-width: 6px;
-  border-style: solid;
-  pointer-events: none;
-}
-/* Changement de couleur de l'arrow au hover */
-.select-container:hover::after {
-  border-top-color: red;
-}
-/* FIN Filters */
 
 /* ARTICLE */
 .articlesList {
@@ -83,7 +28,7 @@ article {
   width: 20%;
   height: auto;
   padding-bottom: 1rem;
-  border-left: 0px solid #696969;
+  border-left: 0 solid red;
   transition: all 150ms ease-in-out;
   box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -132,7 +77,6 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: all 100ms ease-in-out;
   box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.1);
 }

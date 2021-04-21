@@ -6,6 +6,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewsComponent } from './news/news.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { route } from './app.routes'
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(route),
     NgbModule
   ],
   providers: [],

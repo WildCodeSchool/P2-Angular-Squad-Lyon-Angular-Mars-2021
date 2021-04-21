@@ -1,0 +1,57 @@
+*{
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#article{
+    background-color: rgba(79, 81, 82, 0.664);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.title{
+    text-align: start;
+    width: 100%;
+    height: 50px;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 34px;
+    margin-bottom: 45px;
+}
+
+.image1{
+    width: 30%;
+}
+
+.image2{
+    width: 90%;
+    
+}
+
+.imageText{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.premierPara{
+    width: 60%;
+    font-size: 23px;
+    margin-top: 100px;
+
+}
+
+.para2{
+    width: 80%;
+    font-size: 23px;
+    margin-left: 10%;
+}
+
+.secondBlock{
+    margin-top: 90px;
+    gap: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

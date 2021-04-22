@@ -23,13 +23,6 @@ export class DirectencoursComponent implements OnInit {
     {value: 'Maroc-2', viewValue: 'Maroc'}
   ];
 
- /*mesdirects: Direct[] = [
-    {value: 'Angleterre-0', viewValue: 'Angleterre'},
-    {value: 'Soudan-1', viewValue: 'Soudan'},
-    {value: 'Maroc-2', viewValue: 'Maroc'}
-  ];*/
-
-
   constructor() { }
 
   ngOnInit(): void {

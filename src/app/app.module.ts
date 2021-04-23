@@ -9,7 +9,6 @@ import { NewsComponent } from './news/news.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { route } from './app.routes'
-import { ArticlesComponent } from './articles/articles.component';
 
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { FootballComponent } from './football/football.component';
@@ -18,6 +17,12 @@ import { RugbyComponent } from './rugby/rugby.component';
 import { TennisComponent } from './tennis/tennis.component';
 import { ClassementCalendrierComponent } from './classement-calendrier/classement-calendrier.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DemoMaterialModule } from './material.module';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,14 +36,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BasketballComponent,
     RugbyComponent,
     TennisComponent,
-    ArticlesComponent,
     ClassementCalendrierComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    DemoMaterialModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

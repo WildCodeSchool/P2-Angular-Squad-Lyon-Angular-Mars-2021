@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
+import { QuisommesnousComponent } from './quisommesnous/quisommesnous.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DirectencoursComponent } from './directencours/directencours.component';
+import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -29,6 +31,9 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     SliderJoueusesComponent,
+    QuisommesnousComponent,
+    DirectencoursComponent,
+    SliderJoueusesComponent,
     FooterComponent,
     NewsComponent,
     NavBarComponent,
@@ -42,6 +47,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(route),
     NgbModule,
     BrowserAnimationsModule,

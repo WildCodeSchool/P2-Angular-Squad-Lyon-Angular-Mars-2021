@@ -17,6 +17,7 @@ import { BasketballComponent } from './basketball/basketball.component';
 import { RugbyComponent } from './rugby/rugby.component';
 import { TennisComponent } from './tennis/tennis.component';
 import { ClassementCalendrierComponent } from './classement-calendrier/classement-calendrier.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ClassementCalendrierComponent } from './classement-calendrier/classemen
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

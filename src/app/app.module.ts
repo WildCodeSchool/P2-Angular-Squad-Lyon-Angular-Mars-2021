@@ -9,6 +9,7 @@ import { NewsComponent } from './news/news.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { route } from './app.routes'
+import { ArticlesComponent } from './articles/articles.component';
 
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { FootballComponent } from './football/football.component';
@@ -37,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
     RugbyComponent,
     TennisComponent,
     ClassementCalendrierComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

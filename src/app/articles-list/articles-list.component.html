@@ -1,0 +1,48 @@
+<app-slider-joueuses></app-slider-joueuses>
+<section class="news">
+  <h2>NEWS</h2>
+  <hr class="hr-news" />
+  <div class="filters">
+    <div class="select-container" id="left">
+      <select class="select-discipline">
+        <option selected disabled hidden>Discipline</option>
+        <option value="football">Football</option>
+        <option value="basketball">Basketball</option>
+        <option value="rugby">Rugby</option>
+        <option value="tennis">Tennis</option>
+      </select>
+    </div>
+    <div class="select-container" id="mid">
+      <select class="select-pays">
+        <option selected disabled hidden>Pays</option>
+        <option value="football">France</option>
+        <option value="basketball">USA</option>
+        <option value="rugby">R-U</option>
+        <option value="tennis">Allemagne</option>
+      </select>
+    </div>
+    <div class="select-container" id="right">
+      <select class="select-ligue">
+        <option selected disabled hidden>Ligue</option>
+        <option value="football">Division 1</option>
+        <option value="basketball">Division 2</option>
+      </select>
+    </div>
+  </div>
+  <div class="articlesList">
+    <!-- Création de la structure pour chaque article dans la liste -->
+    <article class="article" *ngFor="let article of Articles">
+      <a [href]="article.link">
+        <div class="img">
+          <img [src]="article.img" alt="Image de l'article" />
+        </div>
+        <div class="sport-date">
+          <div class="sport">{{ article.sport }}</div>
+          <div class="date">{{ article.date }}</div>
+        </div>
+        <hr class="hr-article" />
+        <div class="desc">{{ article.desc }}</div>
+      </a>
+    </article>
+  </div>
+</section>

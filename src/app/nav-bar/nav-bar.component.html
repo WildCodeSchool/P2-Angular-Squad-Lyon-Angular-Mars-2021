@@ -1,14 +1,9 @@
-<nav
-  class="navbar navbar-expand-md navbar-light bg-white d-flex justify-content-between"
->
-  <a class="navbar-brand" href="#">
-    <picture>
-      <source srcset="../../assets/img/logoDf.png" media="(min-width: 768px)" />
-      <img
-        src="../../assets/img/logoDfsmall.png"
-        alt="Logo du site."
-        class="d-inline-block align-middle mr-2"
-      />
+<nav class="navbar navbar-expand-md navbar-light bg-white d-flex justify-content-between">
+    <a class="navbar-brand" [routerLink]="['/football']">
+      <picture>
+        <source srcset="../../assets/img/logoDf.png"
+                media="(min-width: 768px)">
+        <img src="../../assets/img/logoDfsmall.png"alt="Logo du site."class="d-inline-block align-middle mr-2" >
     </picture>
   </a>
   <button

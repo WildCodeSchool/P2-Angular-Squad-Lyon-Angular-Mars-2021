@@ -30,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
+    QuisommesnousComponent,
+    DirectencoursComponent,
     SliderJoueusesComponent,
     QuisommesnousComponent,
     DirectencoursComponent,
@@ -59,6 +61,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatIconModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent],
 })

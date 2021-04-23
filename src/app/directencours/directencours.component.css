@@ -1,0 +1,88 @@
+.backgroundDirectencours{
+    background-color: gainsboro;
+    height: 400px;
+    
+}
+
+.flex5elements{
+    display: flex;
+}
+
+/*.autres{
+    
+    justify-items: center;
+    justify-content: center;
+    color: black;
+}*/
+
+::ng-deep .mat-tab-label
+{
+  height: 27px !important;
+  min-height: 5px!important;
+  margin: 3px!important;
+  width: 90px!important;
+  min-width: 5px!important;
+}
+
+::ng-deep .mat-form-field{
+    width:50%;
+    background-color: rgb(218, 218, 218);
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle; 
+}
+
+/*.directencours{
+   min-width: 20px;
+}*/
+
+.text-deco-none{
+    text-decoration: none;
+}
+
+  mat-tab{
+    text-decoration: none;
+
+
+  }
+
+  .logoclub{
+      height: 20%;
+  }
+/*
+  table {
+    width: 100%;
+  } */
+  
+  /*th {
+    height: 70px;
+  }*/
+  
+  /*td {
+    height: 70px;
+  }  */
+
+  .margintop{
+      margin-top: 5%;
+  }
+
+  .directencours{
+      font-size: 30px;
+      font-weight: bold;
+      padding-top: 4%;
+
+  }
+
+  .table{
+      background-color: white;
+  }
+
+  ::ng-deep .mat-tab{
+   
+    background-color: rgb(218, 218, 218);
+    
+}
+
+mat-tab-group{
+    height: 250px;
+}

@@ -1,0 +1,21 @@
+<section class="news">
+  <h2>NEWS</h2>
+  <hr class="hr-news" />
+  <div class="articlesList">
+    <!-- Création de la structure pour chaque article dans la liste -->
+    <article class="article" *ngFor="let article of articles">
+      <a [href]="article.link">
+        <div class="img">
+          <img [src]="article.img" alt="Image de l'article" />
+        </div>
+        <div class="sport-date">
+          <div class="sport">{{ article.sport }}</div>
+          <div class="date">{{ article.date }}</div>
+        </div>
+        <hr class="hr-article" />
+        <div class="desc">{{ article.desc }}</div>
+      </a>
+    </article>
+  </div>
+  <button class="moreArticles" [routerLink]="['/news']">PLUS D'ARTICLES</button>
+</section>

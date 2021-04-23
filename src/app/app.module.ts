@@ -11,12 +11,35 @@ import { DemoMaterialModule } from './material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
+import { FooterComponent } from './footer/footer.component';
+import { NewsComponent } from './news/news.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { route } from './app.routes'
+import { ArticlesComponent } from './articles/articles.component';
+
+import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { FootballComponent } from './football/football.component';
+import { BasketballComponent } from './basketball/basketball.component';
+import { RugbyComponent } from './rugby/rugby.component';
+import { TennisComponent } from './tennis/tennis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuisommesnousComponent,
-    DirectencoursComponent
+    DirectencoursComponent,
+    SliderJoueusesComponent,
+    FooterComponent,
+    NewsComponent,
+    NavBarComponent,
+    ArticlesListComponent,
+    FootballComponent,
+    BasketballComponent,
+    RugbyComponent,
+    TennisComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +48,14 @@ import { MatIconModule } from '@angular/material/icon';
     DemoMaterialModule,
     MatNativeDateModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    BrowserModule,
+    RouterModule.forRoot(route,{scrollPositionRestoration: 'enabled'}),
+    NgbModule
+    
   ],
+  
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

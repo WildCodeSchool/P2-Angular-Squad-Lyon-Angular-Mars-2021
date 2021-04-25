@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 img{
   width: 100%;
   background-size: cover;
 }
+=======
+img {
+  width: 100%;
+  height: 500px;
+}
+
+.car {
+  background-color: burlywood;
+}
+>>>>>>> 85728f10c364e62e61261c400d18bcb42b81e69c

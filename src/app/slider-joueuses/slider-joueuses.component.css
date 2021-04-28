@@ -1,8 +1,4 @@
-img {
-  width: 100%;
-  height: 500px;
-}
-
-.car {
-  background-color: burlywood;
+img{
+  background-position: top;
+  background-size: initial;
 }

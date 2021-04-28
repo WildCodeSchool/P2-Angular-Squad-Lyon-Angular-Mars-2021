@@ -65,6 +65,11 @@ td {
   width: 100%;
 }
 
+td {
+  height: 70px;
+  width: 100%;
+}
+
 .margintop {
   margin-top: 5%;
 }

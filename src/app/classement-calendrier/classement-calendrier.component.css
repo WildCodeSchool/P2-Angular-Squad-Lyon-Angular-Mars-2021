@@ -1,0 +1,124 @@
+.calendar{
+  width: 100%;
+  height: 700px;
+}
+
+.mat-tab-label{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-tab-group {
+  width: 100%;
+  margin: 7%;
+  font-family: "Roboto";
+  font-size: 21px;
+  box-shadow: 0 0 23px;
+}
+
+/* ONGLETS */
+
+mat-icon {
+  margin-left: 20px;
+}
+
+/* active tab */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color: black;
+  background-color: #616161;
+}
+
+/* ink bar */
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color, red) !important;
+}
+
+/* CHAMP POP UP CALENDRIER */
+
+mat-form-field {
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-bottom: 25px;
+  width: 95%;
+}
+
+/* FILTRE */
+div.styled1 {
+  width: 7em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px #ccc;
+}
+
+div.styled2 {
+  width: 12em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px #ccc;
+}
+
+div.styled1 select,
+div.styled2 select {
+  width: 95%
+    /* this percentage effectively extends the drop down button out of view */;
+  background-color: transparent;
+  /* this hides the select's background making any styling visible from the div */
+  background-image: none;
+  -webkit-appearance: none /* this is required for Webkit browsers */;
+  border: none;
+  box-shadow: none;
+  padding: 0.3em 0.5em; /* padding should be added to the select, not the div */
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+#filter-classement {
+  margin-top: 10px;
+}
+
+/* Changement de couleur de l'arrow au hover */
+.styled1:hover::after {
+  border-top-color: red;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* TITRE JOURNEE CALENDRIER */
+h3 {
+  color: rgb(248, 246, 246);
+  background-color: grey;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* TABLEAU CALENDRIER */
+table {
+  width: 100%;
+}
+
+td {
+  height: 70px;
+  padding: 12px;
+  border-bottom: 1px solid grey;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+img {
+  margin-left: 5%;
+}
+
+
+.matchTableau{
+  text-align: center;
+}
+

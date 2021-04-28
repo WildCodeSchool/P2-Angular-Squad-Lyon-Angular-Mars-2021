@@ -109,18 +109,68 @@
       </div>
   </section>
 
+
+  <!-- Formulaire contact -->
+
   <section class="container-fluid graybackground">
+      <form (ngSubmit)= "f.valid && onSubmit(f)" #f="ngForm" method="POST">
+       
+   
       <div class="container contact">
-        <h1 class="contacternous">NOUS CONTACTER</h1>
-        <hr class="hr-titleH1"/>
-        <div class="row">
-        <input placeholder="Saisissez votre nom & prénom" class="col-md-12 col-xs-12  inputcontact" type="Nom & prénom"> <br><br>
-        <input placeholder="Saisissez votre email" class="col-md-12 col-xs-12  inputcontact "  type="text"><br><br>
-        <input placeholder="Saisissez votre numéro de téléphone" class="col-md-12 col-xs-12  inputcontact "  type="text"><br><br>
-        <input placeholder="Votre message ici ..." class="col-md-12 col-xs-12  inputtext"  type="text"><br><br> <br><br>
-        <button class="col-md-12 col-xs-2  boutonenvoyer"> envoyer</button><br><br>
+            <h1 class="contacternous">NOUS CONTACTER</h1>
+            <hr class="hr-titleH1"/>
+            <div class="row">
+            
+            <input #nomprenom="ngModel" placeholder="Saisissez votre nom & prénom" class="form-control col-md-12 
+            col-xs-12  inputcontact" type="text" name="name" ngModel required minlength="3"> <br><br>
+            
+             <!-- Formulaire contact : Vérification / validation 1-->
+            <div *ngIf="f.submitted && nomprenom.errors">
+  
+                <span *ngIf="nomprenom.errors?.required">Le Nom et le prénom est requis</span>
+            
+                <span *ngIf="nomprenom.errors?.minlength">Le Nom et le prénom est requis</span>
+            
+            </div>
+
+            <input #email="ngModel" placeholder="Saisissez votre email" class="col-md-12 col-xs-12  
+            inputcontact "  type="text" name="email" ngModel required 
+            pattern="^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$"><br><br>
+
+            <div *ngIf="f.submitted && nomprenom.errors">
+  
+                <span *ngIf="email.errors?.required"> Email requis</span>
+            
+                <span *ngIf="email.errors?.pattern">Format email incorrect </span>
+            
+            </div>
+
+            <input #telephone="ngModel" placeholder="Saisissez votre numéro de téléphone" class="col-md-12 
+            col-xs-12  inputcontact " type="text" name="telephone" ngModel required minlength="10" maxlength="10"><br><br>
+
+            <div *ngIf="f.submitted && nomprenom.errors">
+  
+                <span *ngIf="telephone.errors?.required">Votre numéro doit contenir 10 chiifres</span>
+            
+                <span *ngIf="telephone.errors?.minlength">Votre numéro doit contenir 10 chiifres</span>
+
+                <span *ngIf="telephone.errors?.maxlength">Votre numéro doit contenir 10 chiifres</span>
+            
+            </div>
+
+            <input #message="ngModel" placeholder="Votre message ici ..." class="col-md-12 col-xs-12  inputtext" type="text" name="message" ngModel required minlength="1"><br><br> <br><br>
+
+            <div *ngIf="f.submitted && message.errors">
+  
+                <span *ngIf="message.errors?.required">Saisissez votre message</span>
+            
+                <span *ngIf="message.errors?.minlength">Saisissez votre message </span>
+            
+            </div>
+
+            <button type="submit" class="col-md-12 col-xs-2  boutonenvoyer" 
+             > envoyer</button><br><br>
+            </div>
         </div>
-
-      </div>
-
+       </form>
   </section>

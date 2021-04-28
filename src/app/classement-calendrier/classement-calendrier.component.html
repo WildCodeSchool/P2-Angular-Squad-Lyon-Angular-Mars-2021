@@ -1,217 +1,215 @@
-<body>
-  <main>
-    <div class="container">
-      <mat-tab-group>
-        <section id="calendrierSection">
-          <!------------------ONGLET CALENDRIER------------------->
-          <mat-tab>
-            <ng-template mat-tab-label>
-              CALENDRIER
-              <mat-icon class="tab-icon">calendar_today</mat-icon>
-            </ng-template>
-            <!-----popup CALENDRIER------>
+<main class="calendar">
+  <div class="container">
+    <mat-tab-group>
+      <section id="calendrierSection">
+        <!------------------ONGLET CALENDRIER------------------->
+        <mat-tab>
+          <ng-template mat-tab-label class="a">
+            CALENDRIER
+            <mat-icon class="tab-icon">calendar_today</mat-icon>
+          </ng-template>
+          <!-----popup CALENDRIER------>
 
-            <mat-form-field color="accent" appearance="fill">
-              <mat-label>Choisissez une date</mat-label>
-              <input matInput [matDatepicker]="picker2" />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker2"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
+          <mat-form-field color="accent" appearance="fill">
+            <mat-label>Choisissez une date</mat-label>
+            <input matInput [matDatepicker]="picker2" />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker2"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
 
-            <!-----FILTRE CALENDRIER------>
+          <!-----FILTRE CALENDRIER------>
 
-            <div class="filter-container">
-              <div class="styled1">
-                <select name="pays">
-                  <option value="" hidden>Pays</option>
-                  <option value="france">France</option>
-                  <option value="allemagne">Allemagne</option>
-                  <option value="espagne">Espagne</option>
-                  <option value="angleterre">Angleterre</option>
-                  <option value="etats-unis">Etats-Unis</option>
-                </select>
-              </div>
-
-              <div class="styled2">
-                <select name="ligue">
-                  <option value="" hidden>Ligue</option>
-                  <option value="d1arkema">D1 Arkema</option>
-                  <option value="coupefrance">Coupe de France</option>
-                  <option value="liguechampion">Ligue des Champions</option>
-                  <option value="euro">Euro</option>
-                </select>
-              </div>
+          <div class="filter-container">
+            <div class="styled1">
+              <select name="pays">
+                <option value="" hidden>Pays</option>
+                <option value="france">France</option>
+                <option value="allemagne">Allemagne</option>
+                <option value="espagne">Espagne</option>
+                <option value="angleterre">Angleterre</option>
+                <option value="etats-unis">Etats-Unis</option>
+              </select>
             </div>
 
-            <!-------TABLEAU DE MATCH PAR JOUR---------->
-            <h3>JOURNEE 21</h3>
-            <table class="matchTableau">
-              <tbody>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/img/PSGlogo.png"
-                      width="20px"
-                      height="20px"
-                      alt="logo"
-                    />
-                    PSG
-                  </td>
-                  <td>21H30</td>
-                  <td>
-                    <img
-                      src="assets/img/logoOM.svg"
-                      alt="logo"
-                      width="20px"
-                      height="20px"
-                    />
-                    OM
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/img/logoOL.png"
-                      alt="logo"
-                      width="20px"
-                      height="20px"
-                    />
-                    OL
-                  </td>
-                  <td>21H30</td>
-                  <td>
-                    <img
-                      src="assets/img/PSGlogo.png"
-                      width="20px"
-                      height="20px"
-                      alt="logo"
-                    />
-                    PSG
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/img/logoOM.svg"
-                      alt="logo"
-                      width="20px"
-                      height="20px"
-                    />
-                    OM
-                  </td>
-                  <td>21H30</td>
-                  <td>
-                    <img
-                      src="assets/img/logoOL.png"
-                      alt="logo"
-                      width="20px"
-                      height="20px"
-                    />
-                    OL
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/img/PSGlogo.png"
-                      width="20px"
-                      height="20px"
-                      alt="logo"
-                    />
-                    PSG
-                  </td>
-                  <td>21H30</td>
-                  <td>
-                    <img
-                      src="assets/img/logoOM.svg"
-                      alt="logo"
-                      width="20px"
-                      height="20px"
-                    />
-                    OM
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </mat-tab>
-        </section>
-        <!-------------------ONGLET CLASSEMENT--------------->
-        <section id="classementSection">
-          <mat-tab>
-            <ng-template mat-tab-label>
-              CLASSEMENT
-              <img
-                src="assets/img/trophy.svg"
-                alt="logo"
-                width="23px"
-                height="23px"
-              />
-            </ng-template>
-
-            <!-----FILTRE CLASSEMENT------>
-            <div id="filter-classement" class="filter-container">
-              <div class="styled1">
-                <select name="pays">
-                  <option value="" hidden>Pays</option>
-                  <option value="france">France</option>
-                  <option value="allemagne">Allemagne</option>
-                  <option value="espagne">Espagne</option>
-                  <option value="angleterre">Angleterre</option>
-                  <option value="etats-unis">Etats-Unis</option>
-                </select>
-              </div>
-
-              <div class="styled2">
-                <select name="ligue">
-                  <option value="" hidden>Ligue</option>
-                  <option value="d1arkema">D1 Arkema</option>
-                  <option value="coupefrance">Coupe de France</option>
-                  <option value="liguechampion">Ligue des Champions</option>
-                  <option value="euro">Euro</option>
-                </select>
-              </div>
+            <div class="styled2">
+              <select name="ligue">
+                <option value="" hidden>Ligue</option>
+                <option value="d1arkema">D1 Arkema</option>
+                <option value="coupefrance">Coupe de France</option>
+                <option value="liguechampion">Ligue des Champions</option>
+                <option value="euro">Euro</option>
+              </select>
             </div>
-            <!-------TABLEAU DE CLASSEMENT---------->
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-              <!-- P Column -->
-              <ng-container matColumnDef="P">
-                <th mat-header-cell *matHeaderCellDef>P</th>
-                <td mat-cell *matCellDef="let element">{{ element.P }}</td>
-              </ng-container>
+          </div>
 
-              <!-- CLUBS Column -->
-              <ng-container matColumnDef="CLUBS">
-                <th mat-header-cell *matHeaderCellDef>CLUBS</th>
-                <td mat-cell *matCellDef="let element">{{ element.CLUBS }}</td>
-              </ng-container>
+          <!-------TABLEAU DE MATCH PAR JOUR---------->
+          <h3>JOURNEE 21</h3>
+          <table class="matchTableau">
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="assets/img/PSGlogo.png"
+                    width="20px"
+                    height="20px"
+                    alt="logo"
+                  />
+                  PSG
+                </td>
+                <td>21H30</td>
+                <td>
+                  <img
+                    src="assets/img/logoOM.svg"
+                    alt="logo"
+                    width="20px"
+                    height="20px"
+                  />
+                  OM
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/img/logoOL.png"
+                    alt="logo"
+                    width="20px"
+                    height="20px"
+                  />
+                  OL
+                </td>
+                <td>21H30</td>
+                <td>
+                  <img
+                    src="assets/img/PSGlogo.png"
+                    width="20px"
+                    height="20px"
+                    alt="logo"
+                  />
+                  PSG
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/img/logoOM.svg"
+                    alt="logo"
+                    width="20px"
+                    height="20px"
+                  />
+                  OM
+                </td>
+                <td>21H30</td>
+                <td>
+                  <img
+                    src="assets/img/logoOL.png"
+                    alt="logo"
+                    width="20px"
+                    height="20px"
+                  />
+                  OL
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/img/PSGlogo.png"
+                    width="20px"
+                    height="20px"
+                    alt="logo"
+                  />
+                  PSG
+                </td>
+                <td>21H30</td>
+                <td>
+                  <img
+                    src="assets/img/logoOM.svg"
+                    alt="logo"
+                    width="20px"
+                    height="20px"
+                  />
+                  OM
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-tab>
+      </section>
+      <!-------------------ONGLET CLASSEMENT--------------->
+      <section id="classementSection">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            CLASSEMENT
+            <img
+              src="assets/img/trophy.svg"
+              alt="logo"
+              width="23px"
+              height="23px"
+            />
+          </ng-template>
 
-              <!-- PTS Column -->
-              <ng-container matColumnDef="PTS">
-                <th mat-header-cell *matHeaderCellDef>PTS</th>
-                <td mat-cell *matCellDef="let element">{{ element.PTS }}</td>
-              </ng-container>
+          <!-----FILTRE CLASSEMENT------>
+          <div id="filter-classement" class="filter-container">
+            <div class="styled1">
+              <select name="pays">
+                <option value="" hidden>Pays</option>
+                <option value="france">France</option>
+                <option value="allemagne">Allemagne</option>
+                <option value="espagne">Espagne</option>
+                <option value="angleterre">Angleterre</option>
+                <option value="etats-unis">Etats-Unis</option>
+              </select>
+            </div>
 
-              <!-- J Column -->
-              <ng-container matColumnDef="J">
-                <th mat-header-cell *matHeaderCellDef>J</th>
-                <td mat-cell *matCellDef="let element">{{ element.J }}</td>
-              </ng-container>
+            <div class="styled2">
+              <select name="ligue">
+                <option value="" hidden>Ligue</option>
+                <option value="d1arkema">D1 Arkema</option>
+                <option value="coupefrance">Coupe de France</option>
+                <option value="liguechampion">Ligue des Champions</option>
+                <option value="euro">Euro</option>
+              </select>
+            </div>
+          </div>
+          <!-------TABLEAU DE CLASSEMENT---------->
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- P Column -->
+            <ng-container matColumnDef="P">
+              <th mat-header-cell *matHeaderCellDef>P</th>
+              <td mat-cell *matCellDef="let element">{{ element.P }}</td>
+            </ng-container>
 
-              <!-- DIFF Column -->
-              <ng-container matColumnDef="DIFF">
-                <th mat-header-cell *matHeaderCellDef>DIFF</th>
-                <td mat-cell *matCellDef="let element">{{ element.DIFF }}</td>
-              </ng-container>
+            <!-- CLUBS Column -->
+            <ng-container matColumnDef="CLUBS">
+              <th mat-header-cell *matHeaderCellDef>CLUBS</th>
+              <td mat-cell *matCellDef="let element">{{ element.CLUBS }}</td>
+            </ng-container>
 
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-            </table>
-          </mat-tab>
-        </section>
-      </mat-tab-group>
-    </div>
-  </main>
-</body>
+            <!-- PTS Column -->
+            <ng-container matColumnDef="PTS">
+              <th mat-header-cell *matHeaderCellDef>PTS</th>
+              <td mat-cell *matCellDef="let element">{{ element.PTS }}</td>
+            </ng-container>
+
+            <!-- J Column -->
+            <ng-container matColumnDef="J">
+              <th mat-header-cell *matHeaderCellDef>J</th>
+              <td mat-cell *matCellDef="let element">{{ element.J }}</td>
+            </ng-container>
+
+            <!-- DIFF Column -->
+            <ng-container matColumnDef="DIFF">
+              <th mat-header-cell *matHeaderCellDef>DIFF</th>
+              <td mat-cell *matCellDef="let element">{{ element.DIFF }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </mat-tab>
+      </section>
+    </mat-tab-group>
+  </div>
+</main>

@@ -1,88 +1,88 @@
-.backgroundDirectencours{
-    background-color: gainsboro;
-    height: 400px;
-    
+.backgroundDirectencours {
+  background-color: gainsboro;
+  height: 400px;
+  box-shadow: 0 0 13px;
 }
 
-.flex5elements{
-    display: flex;
+.flex5elements {
+  display: flex;
 }
 
 /*.autres{
-    
-    justify-items: center;
-    justify-content: center;
-    color: black;
+  
+  justify-items: center;
+  justify-content: center;
+  color: black;
 }*/
 
-::ng-deep .mat-tab-label
-{
+::ng-deep .mat-tab-label {
   height: 27px !important;
-  min-height: 5px!important;
-  margin: 3px!important;
-  width: 90px!important;
-  min-width: 5px!important;
+  min-height: 5px !important;
+  margin: 3px !important;
+  width: 100% !important;
+  min-width: 5px !important;
 }
 
-::ng-deep .mat-form-field{
-    width:50%;
-    background-color: rgb(218, 218, 218);
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle; 
+::ng-deep .mat-form-field {
+  width: 50%;
+  background-color: rgb(218, 218, 218);
+  font-size: 17px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 /*.directencours{
-   min-width: 20px;
+ min-width: 20px;
 }*/
 
-.text-deco-none{
-    text-decoration: none;
+.text-deco-none {
+  text-decoration: none;
 }
 
-  mat-tab{
-    text-decoration: none;
-
-
-  }
-
-  .logoclub{
-      height: 20%;
-  }
-/*
-  table {
-    width: 100%;
-  } */
-  
-  /*th {
-    height: 70px;
-  }*/
-  
-  /*td {
-    height: 70px;
-  }  */
-
-  .margintop{
-      margin-top: 5%;
-  }
-
-  .directencours{
-      font-size: 30px;
-      font-weight: bold;
-      padding-top: 4%;
-
-  }
-
-  .table{
-      background-color: white;
-  }
-
-  ::ng-deep .mat-tab{
-   
-    background-color: rgb(218, 218, 218);
-    
+mat-tab {
+  text-decoration: none;
 }
 
-mat-tab-group{
-    height: 250px;
+.logoclub {
+  height: 20%;
+}
+
+table {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  margin-top: 5px;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+th {
+  height: 70px;
+}
+
+td {
+  height: 70px;
+  width: 100%;
+}
+
+.margintop {
+  margin-top: 5%;
+}
+
+.directencours {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 4%;
+}
+
+.table {
+  background-color: white;
+}
+
+::ng-deep .mat-tab {
+  background-color: rgb(218, 218, 218);
+}
+
+mat-tab-group {
+  height: 250px;
 }

@@ -1,4 +1,24 @@
 img{
-  background-position: top;
-  background-size: initial;
+  width: auto;
+  background-size: cover;
+  height: auto;
 }
+
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#test{
+  display: flex;
+  flex-direction: column;
+}
+
+p{
+  display: flex;
+  justify-content: center;
+  font-size: 210%;
+  color: black;
+  font-weight: bold;
+}
+

@@ -90,3 +90,9 @@ mat-tab-group {
 .matchdirectsize {
   font-size: 12px;
 }
+
+.AucunMatch {
+  text-align: center;
+  margin-top: 10%;
+  color: gray;
+}

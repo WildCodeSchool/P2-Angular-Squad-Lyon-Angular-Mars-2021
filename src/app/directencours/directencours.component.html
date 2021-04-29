@@ -5,6 +5,8 @@
     <div  >
     <mat-tab label="France" > 
        
+        <div  *ngIf= "listScore.length==0; else afficherScore" > <p class="AucunMatch"> Aucun match en cours </p> </div>
+        <ng-template #afficherScore>
         <table *ngFor="let score of listScore">
             
             <div class="col-md-12 margintop">
@@ -18,6 +20,7 @@
                   <span class="col-md-1 matchdirectsize">{{score.teams.away.name}}</span>
                 </div>
         </table>
+      </ng-template>
 
               
         </mat-tab>

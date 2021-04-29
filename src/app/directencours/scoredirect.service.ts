@@ -18,7 +18,7 @@ export class ScoredirectService {
   };
 
 
-  url:string = "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all&league=283"
+  url:string = "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all&league=64 "
   private stockage : HttpClient;
 
   constructor(private service : HttpClient) { 

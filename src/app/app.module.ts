@@ -59,7 +59,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   
   providers: [],

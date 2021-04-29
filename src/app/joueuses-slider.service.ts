@@ -8,33 +8,24 @@ export class JoueusesSliderService {
 
   joueusesList: Joueuse[] = [
     {
-      sport: 'Football',
-      nom: 'Zidane',
-      img: 'assets/img/article1.jpg',
-
-    },
-    {
       sport: 'Rugby',
-      nom: 'Zlatan',
-      img: 'assets/img/article1.jpg',
-
-    },
-    {
-      sport: 'Tennis',
-      nom: 'Cantona',
-      img: 'assets/img/article1.jpg',
+      nom: 'Jessy Tremouliere',
+      img: 'assets/img/imgSlider/tremouliere.png',
+      desc: 'Elue meilleure joueuse de la dernière décennie'
 
     },
     {
       sport: 'Basketball',
-      nom: 'Federer',
-      img: 'assets/img/article1.jpg',
+      nom: 'Iliana Rupert',
+      img: 'assets/img/imgSlider/rupert.png',
+      desc:'Le grand espoir du basket français.'
 
     },
     {
-      sport: 'Tennis',
-      nom: 'Lebron',
-      img: 'assets/img/article1.jpg',
+      sport: 'Football',
+      nom: 'Megan Rapinoe',
+      img: 'assets/img/imgSlider/rapinoe.png',
+      desc:"Ballon d'Or de la dernière coupe du monde."
 
     },
   ]

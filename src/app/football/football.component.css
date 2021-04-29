@@ -1,20 +1,18 @@
 .align-calendar-direct{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: -12px;
     margin-bottom: -90px;
 }
 
 .calendrier{
-    width: 40%;
-    transform: translateX(150px);
+    width: 30%;
 }
 
 .direct-en-cour{
-    width: 70%;
+    width: 40%;
     margin-left: 20px;
-    transform: translateX(300px);
     margin-top: -120px;
     margin-left: 34px;
 }
@@ -28,13 +26,13 @@
         align-items: center;
     }
     .calendrier{
-        width: 100%;
-        margin-left: -350px;
+        width: 95%;
+        margin-left: -50px;
         font-size: 17px;
     }
     .direct-en-cour{
-        width: 100%;
-        margin-left: -590px;
+        width: 95%;
+        margin: auto;
         align-items: stretch;
         font-size: 17px;
         margin-bottom: 100px;

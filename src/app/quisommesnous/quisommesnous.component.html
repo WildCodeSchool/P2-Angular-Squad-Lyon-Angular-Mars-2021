@@ -121,15 +121,15 @@
             <hr class="hr-titleH1"/>
             <div class="row">
             
-            <input #nomprenom="ngModel" placeholder="Saisissez votre nom & prénom" class="form-control col-md-12 
+            <input #nomPrenom="ngModel" placeholder="Saisissez votre nom & prénom" class="form-control col-md-12 
             col-xs-12  inputcontact" type="text" name="name" ngModel required minlength="3"> <br><br>
             
              <!-- Formulaire contact : Vérification / validation 1-->
-            <div *ngIf="f.submitted && nomprenom.errors">
+            <div *ngIf="f.submitted && nomPrenom.errors">
   
-                <span *ngIf="nomprenom.errors?.required">Le Nom et le prénom est requis</span>
+                <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom est requis</span>
             
-                <span *ngIf="nomprenom.errors?.minlength">Le Nom et le prénom est requis</span>
+                <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom est requis</span>
             
             </div>
 
@@ -137,22 +137,22 @@
             inputcontact "  type="text" name="email" ngModel required 
             pattern="^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$"><br><br>
 
-            <div *ngIf="f.submitted && nomprenom.errors">
+            <div *ngIf="f.submitted && nomPrenom.errors">
   
-                <span *ngIf="email.errors?.required"> Email requis</span>
+                <span class="errors" *ngIf="email.errors?.required"> Email requis</span>
             
-                <span *ngIf="email.errors?.pattern">Format email incorrect </span>
+                <span class="errors" *ngIf="email.errors?.pattern">Format email incorrect </span>
             
             </div>
 
             <input #telephone="ngModel" placeholder="Saisissez votre numéro de téléphone" class="col-md-12 
             col-xs-12  inputcontact " type="text" name="telephone" ngModel required minlength="10" maxlength="10"><br><br>
 
-            <div *ngIf="f.submitted && nomprenom.errors">
+            <div *ngIf="f.submitted && nomPrenom.errors">
   
-                <span *ngIf="telephone.errors?.required">Votre numéro doit contenir 10 chiifres</span>
+                <span class="errors" *ngIf="telephone.errors?.required">Votre numéro doit contenir 10 chiffres</span>
             
-                <span *ngIf="telephone.errors?.minlength">Votre numéro doit contenir 10 chiifres</span>
+                <span class="errors" *ngIf="telephone.errors?.minlength">Votre numéro doit contenir 10 chiffres</span>
 
                 <span *ngIf="telephone.errors?.maxlength">Votre numéro doit contenir 10 chiifres</span>
             
@@ -162,9 +162,9 @@
 
             <div *ngIf="f.submitted && message.errors">
   
-                <span *ngIf="message.errors?.required">Saisissez votre message</span>
+                <span class="errors" *ngIf="message.errors?.required">Saisissez votre message</span>
             
-                <span *ngIf="message.errors?.minlength">Saisissez votre message </span>
+                <span class="errors" *ngIf="message.errors?.minlength">Saisissez votre message </span>
             
             </div>
 

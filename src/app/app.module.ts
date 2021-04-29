@@ -62,7 +62,8 @@ import {NgForm} from '@angular/forms'
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   
   providers: [],

@@ -115,3 +115,7 @@ input::placeholder{
     text-align: center;
     opacity: 0.5;
 }
+
+.errors{
+  color: red;
+}

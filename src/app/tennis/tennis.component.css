@@ -1,0 +1,12 @@
+.calendrier-tennis{ 
+    transform: translateX(-78px);
+}
+
+@media (max-width:450px){
+    .calendrier-tennis{
+        transform: translateX(-20px);
+        width: 100%;
+    }
+}
+
+/*modife pour centrer le calendrier et adapter "@media" taille écran IPHONE X*/

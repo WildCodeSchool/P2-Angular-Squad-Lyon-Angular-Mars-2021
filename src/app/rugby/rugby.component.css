@@ -1,0 +1,12 @@
+.calendrier-rugby{ 
+    transform: translateX(-78px);
+}
+
+@media (max-width:450px){
+    .calendrier-rugby{
+        transform: translateX(-20px);
+        width: 100%;
+    }
+}
+
+/*modife pour centrer le calendrier et adapter taille "@media" écran IPHONE X*/

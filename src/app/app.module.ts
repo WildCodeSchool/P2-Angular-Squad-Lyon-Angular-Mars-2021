@@ -53,7 +53,7 @@ import {NgForm} from '@angular/forms'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(route),
+    RouterModule.forRoot(route, {scrollPositionRestoration: 'top'}),
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,

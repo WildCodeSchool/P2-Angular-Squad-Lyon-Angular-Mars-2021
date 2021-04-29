@@ -19,14 +19,14 @@ export class ScoredirectService {
 
 
   url:string = "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all&league=283"
-  private toto : HttpClient;
+  private stockage : HttpClient;
 
   constructor(private service : HttpClient) { 
-    this.toto = service;
+    this.stockage = service;
   }
 
     public getScore():Observable<any>{
-    const observable : Observable<any> = this.toto.get(this.url,this.requestOptions)
+    const observable : Observable<any> = this.stockage.get(this.url,this.requestOptions)
     const traitement = (data:any) => {return data.response as Object}
     return observable.pipe(map(traitement));
   }

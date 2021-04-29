@@ -50,7 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(route),
+    RouterModule.forRoot(route, {scrollPositionRestoration: 'top'}),
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,

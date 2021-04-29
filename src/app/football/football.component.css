@@ -25,13 +25,13 @@
         align-items: center;
     }
     .calendrier{
-        width: 100%;
-        margin-left: -350px;
+        width: 95%;
+        margin-left: -50px;
         font-size: 17px;
     }
     .direct-en-cour{
-        width: 100%;
-        margin-left: -590px;
+        width: 95%;
+        margin: auto;
         align-items: stretch;
         font-size: 17px;
         margin-bottom: 100px;

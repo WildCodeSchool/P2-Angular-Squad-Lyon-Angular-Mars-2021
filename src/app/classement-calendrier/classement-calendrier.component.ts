@@ -17,31 +17,53 @@ export interface ClassementElement {
   templateUrl: './classement-calendrier.component.html',
   styleUrls: ['./classement-calendrier.component.css']
 })
-export class ClassementCalendrierComponent implements AfterViewInit {
-  // Définition des colums du classement
+export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
+  // Nécessaire pour la pagination matchesDuJour
+  page = 1;
+  matchesToDisplay: any[]
+  journee: string
+
+  // Définition des colonnes du classement
   displayedColumns: string[] = ['P', 'CLUBS', 'PTS', 'J', 'DIFF'];
   ELEMENT_DATA: ClassementElement[] = []
-  
 
 
-public dataSource: any;
+
+  public dataSource: any;
   constructor(private service: CalendrierClassementService) { }
-// Nécessaire pour la pagination
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngAfterViewInit(){
-    this.service.getStanding().subscribe((api_standing) => {
-      api_standing.forEach(equipe => {
-        this.ELEMENT_DATA.push({P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
-      });
-      this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
-      this.dataSource.paginator = this.paginator;
+
+  ngOnInit(): void {
+    this.service.getCalendar().subscribe((api_matchs) => {
+      this.matchesToDisplay = api_matchs;
+      this.journee = this.matchesToDisplay[0].league.round.slice(17, 20)
+      console.log(this.matchesToDisplay)
     })
   }
-  
 
-  
 
-  
-  
+  // Nécessaire pour la pagination
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  ngAfterViewInit() {
+    // Appel du service
+    this.service.getStanding().subscribe((api_standing) => {
+      // Remplissage du tableau pour chaque équipe présente dans la ligue
+      api_standing.forEach(equipe => {
+        this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
+      });
+      // JSP PAS TROP ENCORE
+      this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
+      // Nécessaire pour la pagination
+      this.dataSource.paginator = this.paginator;
+    })
+
+
+
+  }
+
+
+
+
+
+
 
 }

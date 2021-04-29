@@ -20,7 +20,7 @@ export interface ClassementElement {
 export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   // Nécessaire pour la pagination matchesDuJour
   page = 1;
-  matchesToDisplay: any[]
+  matchesToDisplay: any[] = []
   matchesJournee: string
 
   // Définition des colonnes du classement
@@ -35,8 +35,9 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.service.getCalendar().subscribe((api_matchs) => {
       this.matchesToDisplay = api_matchs;
-      this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
-      console.log(this.matchesToDisplay)
+      if (this.matchesToDisplay.length !== 0) {
+        this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
+      }
     })
   }
 

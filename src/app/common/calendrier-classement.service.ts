@@ -44,7 +44,7 @@ export class CalendrierClassementService {
   // Appel API qui GET les matches pour un jour précis
   getCalendar(): Observable<any> {
     // Spécification de ce que l'on veut récuperer
-    this.options = 'fixtures?date=2021-04-13&league=64&season=2020'
+    this.options = 'fixtures?date=2021-04-17&league=64&season=2020'
     // GET de la réponse
     const calendarResponse: Observable<any> = this.http.get(`${this.url}${this.options}`, this.reqOpt)
     // On vient récuperer seulement ce que l'on souhaite (tout en l'occurrence)

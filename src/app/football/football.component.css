@@ -3,10 +3,12 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: -90px;
+    width: 100%;
 }
 
 .calendrier{
     width: 30%;
+    transform: translateX(150px);
 }
 
 .direct-en-cour{
@@ -16,7 +18,10 @@
     margin-left: 34px;
 }
 
-@media (max-width: 900px){
+
+/* largeur d'écran 1000px ex:ordi/tablette*/
+
+@media (max-width: 1000px){
     .align-calendar-direct{
         display: flex;
         flex-direction: column;
@@ -35,5 +40,15 @@
         align-items: stretch;
         font-size: 17px;
         margin-bottom: 100px;
+    }
+}
+
+/*largeur d'écran en dssous de 411px ex: IPHONE X*/
+
+@media (max-width: 411px){
+
+    .direct-en-cour{
+        width: 100%;
+        margin-left: -600px;
     }
 }

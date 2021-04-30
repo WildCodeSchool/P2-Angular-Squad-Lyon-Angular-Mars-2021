@@ -37,8 +37,7 @@
 
 /* Partie L'Equipe de page Qui sommes-nous */
 
-.membreequipeglobal {
-}
+
 
 .membreequipe {
   flex-direction: column;
@@ -115,4 +114,8 @@ width: 100%;
 input::placeholder{
     text-align: center;
     opacity: 0.5;
+}
+
+.errors{
+  color: red;
 }

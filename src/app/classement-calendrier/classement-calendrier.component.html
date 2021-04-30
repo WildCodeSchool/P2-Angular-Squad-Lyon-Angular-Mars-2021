@@ -46,95 +46,42 @@
           </div>
 
           <!-------TABLEAU DE MATCH PAR JOUR---------->
-          <h3>JOURNEE 21</h3>
+          <h3>JOURNÉE {{ matchesJournee }}</h3>
           <table class="matchTableau">
             <tbody>
-              <tr>
-                <td>
-                  <img
-                    src="assets/img/PSGlogo.png"
-                    width="20px"
-                    height="20px"
-                    alt="logo"
-                  />
-                  PSG
-                </td>
-                <td>21H30</td>
-                <td>
-                  <img
-                    src="assets/img/logoOM.svg"
-                    alt="logo"
-                    width="20px"
-                    height="20px"
-                  />
-                  OM
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="assets/img/logoOL.png"
-                    alt="logo"
-                    width="20px"
-                    height="20px"
-                  />
-                  OL
-                </td>
-                <td>21H30</td>
-                <td>
-                  <img
-                    src="assets/img/PSGlogo.png"
-                    width="20px"
-                    height="20px"
-                    alt="logo"
-                  />
-                  PSG
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="assets/img/logoOM.svg"
-                    alt="logo"
-                    width="20px"
-                    height="20px"
-                  />
-                  OM
-                </td>
-                <td>21H30</td>
-                <td>
-                  <img
-                    src="assets/img/logoOL.png"
-                    alt="logo"
-                    width="20px"
-                    height="20px"
-                  />
-                  OL
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="assets/img/PSGlogo.png"
-                    width="20px"
-                    height="20px"
-                    alt="logo"
-                  />
-                  PSG
-                </td>
-                <td>21H30</td>
-                <td>
-                  <img
-                    src="assets/img/logoOM.svg"
-                    alt="logo"
-                    width="20px"
-                    height="20px"
-                  />
-                  OM
-                </td>
-              </tr>
+              <div
+                class="no-match"
+                *ngIf="matchesToDisplay.length == 0; else matchesDuJour"
+              >
+                <p>Aucun match ce jour</p>
+              </div>
+              <ng-template #matchesDuJour>
+                <tr
+                  *ngFor="
+                    let match of matchesToDisplay
+                      | slice: (page - 1) * 5:page * 5
+                  "
+                >
+                  <td>
+                    {{ match.teams.home.name }}
+                  </td>
+                  <td>
+                    {{ match.score.fulltime.home }} -
+                    {{ match.score.fulltime.away }}
+                  </td>
+                  <td>
+                    {{ match.teams.away.name }}
+                  </td>
+                </tr>
+              </ng-template>
             </tbody>
           </table>
+          <ngb-pagination
+            [(page)]="page"
+            [pageSize]="5"
+            [collectionSize]="matchesToDisplay.length"
+          >
+          </ngb-pagination>
         </mat-tab>
       </section>
       <!-------------------ONGLET CLASSEMENT--------------->
@@ -143,7 +90,7 @@
           <ng-template mat-tab-label>
             CLASSEMENT
             <img
-              src="assets/img/trophy.svg"
+              src="assets/img/imgLogoIcon/trophy.svg"
               alt="logo"
               width="23px"
               height="23px"
@@ -208,6 +155,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </table>
+          <mat-paginator [pageSize]="[5]" showFirstLastButtons></mat-paginator>
         </mat-tab>
       </section>
     </mat-tab-group>

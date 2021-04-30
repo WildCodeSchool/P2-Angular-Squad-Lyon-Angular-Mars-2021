@@ -10,7 +10,6 @@ interface Direct {
   value: string;
   viewValue: string;
 }
-
 @Component({
   selector: 'app-directencours',
   templateUrl: './directencours.component.html',
@@ -22,9 +21,9 @@ interface Direct {
 export class DirectencoursComponent implements OnInit {
 
   lesPays: Pays[] = [
-    {value: 'Angleterre-0', viewValue: 'Angleterre'},
-    {value: 'Soudan-1', viewValue: 'Soudan'},
-    {value: 'Maroc-2', viewValue: 'Maroc'}
+    { value: 'Angleterre-0', viewValue: 'Angleterre' },
+    { value: 'Soudan-1', viewValue: 'Soudan' },
+    { value: 'Maroc-2', viewValue: 'Maroc' }
   ];
 
   public listScore:[]= [];
@@ -36,7 +35,7 @@ export class DirectencoursComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getScore().subscribe((url) =>{this.listScore=url  
-      console.log(this.listScore);
+      
     
     }
     

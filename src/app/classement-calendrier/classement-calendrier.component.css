@@ -79,7 +79,11 @@ div.styled2 select {
 #filter-classement {
   margin-top: 10px;
 }
-
+/* logo equipes */
+.logo{
+  height: 20px;
+  width: 20px;
+}
 /* Changement de couleur de l'arrow au hover */
 .styled1:hover::after {
   border-top-color: red;

@@ -27,6 +27,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 
+import {NgForm} from '@angular/forms'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   
   providers: [],

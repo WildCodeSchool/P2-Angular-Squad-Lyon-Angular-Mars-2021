@@ -1,95 +1,70 @@
-<div class="col-md-6 backgroundDirectencours">
+<div class="col-md backgroundDirectencours">
   <h1 class="directencours">Direct en cours ...</h1>
 
   <mat-tab-group class="table">
     <div>
       <mat-tab label="France">
-        <table>
-          <div class="col-md-12 margintop">
-            <span class="col-md-1"> PSG</span>
-            <span class="col-md-1"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1"> 3</span>
-            <span class="col-md-12"> - </span>
-            <span class="col-md-12"> 3</span>
-            <span class="col-md-12"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1">OL</span>
-          </div>
-        </table>
+        <div *ngIf="listScore.length == 0; else afficherScore">
+          <p class="AucunMatch">Aucun match en cours</p>
+        </div>
+        <ng-template #afficherScore>
+          <table *ngFor="let score of listScore">
+            <div class="col-md-12 margintop">
+              <span class="col-md-1 matchdirectsize">
+                {{ score.teams.home.name }}</span
+              >
 
-        <table>
-          <div class="col-md-12 margintop">
-            <span class="col-md-1"> PSG</span>
-            <span class="col-md-1"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1"> 3</span>
-            <span class="col-md-12"> - </span>
-            <span class="col-md-12"> 3</span>
-            <span class="col-md-12"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1">OL</span>
-          </div>
-        </table>
+              <span class="col-md-1 matchdirectsize">
+                {{ score.goals.home }}</span
+              >
+              <span class="col-md-12 matchdirectsize"> - </span>
+              <span class="col-md-12 matchdirectsize">
+                {{ score.goals.away }}</span
+              >
 
-        <table>
-          <div class="col-md-12 margintop">
-            <span class="col-md-1"> PSG</span>
-            <span class="col-md-1"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1"> 3</span>
-            <span class="col-md-12"> - </span>
-            <span class="col-md-12"> 3</span>
-            <span class="col-md-12"
-              ><img
-                src="assets/img/imgLogoIcon/PSGlogo.png"
-                width="20px"
-                height="20px"
-            /></span>
-            <span class="col-md-1">OL</span>
-          </div>
-        </table>
+              <span class="col-md-1 matchdirectsize">{{
+                score.teams.away.name
+              }}</span>
+            </div>
+          </table>
+        </ng-template>
       </mat-tab>
     </div>
+
+    <table>
+      <div class="col-md-12 margintop">
+        <span class="col-md-1"> PSG</span>
+        <span class="col-md-1"
+          ><img
+            src="assets/img/imgLogoIcon/PSGlogo.png"
+            width="20px"
+            height="20px"
+        /></span>
+        <span class="col-md-1"> 3</span>
+        <span class="col-md-12"> - </span>
+        <span class="col-md-12"> 3</span>
+        <span class="col-md-12"
+          ><img
+            src="assets/img/imgLogoIcon/PSGlogo.png"
+            width="20px"
+            height="20px"
+        /></span>
+        <span class="col-md-1">OL</span>
+      </div>
+    </table>
 
     <mat-tab label="Italie">
       <table>
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -99,19 +74,29 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
+          /></span>
+          <span class="col-md-1">OL</span>
+        </div>
+      </table>
+
+      <table>
+        <div class="col-md-12 margintop">
+          <span class="col-md-1"> PSG</span>
+          <span class="col-md-1"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
+          /></span>
+          <span class="col-md-1"> 3</span>
+          <span class="col-md-12"> - </span>
+          <span class="col-md-12"> 3</span>
+          <span class="col-md-12"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -144,19 +129,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -166,19 +145,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -188,19 +161,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -211,19 +178,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -233,19 +194,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -255,19 +210,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -290,19 +239,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -312,19 +255,13 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
@@ -334,23 +271,39 @@
         <div class="col-md-12 margintop">
           <span class="col-md-1"> PSG</span>
           <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1"> 3</span>
           <span class="col-md-12"> - </span>
           <span class="col-md-12"> 3</span>
           <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
+            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
           /></span>
           <span class="col-md-1">OL</span>
         </div>
       </table>
     </mat-tab>
+
+    <table>
+      <div class="col-md-12 margintop">
+        <span class="col-md-1"> PSG</span>
+        <span class="col-md-1"
+          ><img
+            src="assets/img/imgLogoIcon/PSGlogo.png"
+            width="20px"
+            height="20px"
+        /></span>
+        <span class="col-md-1"> 3</span>
+        <span class="col-md-12"> - </span>
+        <span class="col-md-12"> 3</span>
+        <span class="col-md-12"
+          ><img
+            src="assets/img/imgLogoIcon/PSGlogo.png"
+            width="20px"
+            height="20px"
+        /></span>
+        <span class="col-md-1">OL</span>
+      </div>
+    </table>
   </mat-tab-group>
 </div>

@@ -28,6 +28,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import {NgForm} from '@angular/forms'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(route),
+    RouterModule.forRoot(route, {scrollPositionRestoration: 'top'}),
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -61,7 +64,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   
   providers: [],

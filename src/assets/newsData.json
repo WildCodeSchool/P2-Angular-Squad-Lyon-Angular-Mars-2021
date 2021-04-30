@@ -1,8 +1,6 @@
-[ 
-
-{
+[{
 "link": "#",
-"id": "101",
+"id": "FOOT1",
 "img": "../../assets/img/imgArticleS/article1.jpg",
 "sport": "FOOT",
 "date": "15/04/2021",
@@ -12,7 +10,7 @@
 
 {
     "link": "#",
-    "id": "102",
+    "id": "FOOT2",
     "img": "../../assets/img/imgArticleS/article2.jpg",
     "sport": "FOOT",
     "date": "15/04/2021",
@@ -22,7 +20,7 @@
     
     {
     "link": "#",
-    "id": "103",
+    "id": "FOOT3",
     "img": "../../assets/img/imgArticleS/article3.jpg",
     "sport": "FOOT",
     "date": "15/04/2021",
@@ -119,6 +117,4 @@
 "date": "23/04/2021",
 "desc": "Caroline Garcia éliminée, plus de Françaises en lice à Dubaï",
 "content": "xxxxx"
-}
-
-]
+}]

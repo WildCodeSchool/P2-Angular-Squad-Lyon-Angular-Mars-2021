@@ -1,9 +1,10 @@
 <section class="news">
   <h2>NEWS</h2>
   <hr class="hr-news" />
-  <div class="articlesList">
+  <!-- Condition pour filtrer l'affichage des sports et par page -->
+  <div class="articlesList" *ngIf="filterBySport()">
     <!-- Création de la structure pour chaque article dans la liste -->
-    <article class="article" *ngFor="let article of articles">
+    <article class="article" *ngFor="let article of articleBySport">
       <a [href]="article.link">
         <div class="img">
           <img [src]="article.img" alt="Image de l'article" />

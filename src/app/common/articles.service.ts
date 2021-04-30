@@ -3,6 +3,8 @@ import { TestArticles } from './test-articles';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class ArticlesService {
   private service: HttpClient;
 
-  constructor(service: HttpClient) {
+  constructor(service: HttpClient, router: Router) {
     this.service = service;
   }
 
@@ -19,6 +21,7 @@ export class ArticlesService {
 
     const treatment = (param_data: TestArticles[]) => { return param_data as TestArticles[];};
     return obs.pipe(map(treatment));
+
   }
 
-}
+} 

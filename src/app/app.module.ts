@@ -26,6 +26,10 @@ import { DemoMaterialModule } from './material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import {NgForm} from '@angular/forms'
+
 
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ import { MatIconModule } from '@angular/material/icon';
     RugbyComponent,
     TennisComponent,
     ClassementCalendrierComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   
   providers: [],

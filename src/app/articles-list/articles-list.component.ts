@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TestArticles, testArticlesList } from '../common/test-articles';
+import { ArticlesService } from '../common/articles.service';
+import { TestArticles } from '../common/test-articles';
 
 @Component({
   selector: 'app-articles-list',
@@ -7,8 +8,15 @@ import { TestArticles, testArticlesList } from '../common/test-articles';
   styleUrls: ['./articles-list.component.css'],
 })
 export class ArticlesListComponent implements OnInit {
-  Articles: TestArticles[] = testArticlesList;
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+  public articles: TestArticles[];
+  public service: ArticlesService;
+  
+  constructor(public articlesService: ArticlesService) {
+      this.service = articlesService;
+  }
+  
+  ngOnInit(): void {
+      this.service.getArticles().subscribe((response: TestArticles[]) => {
+          this.articles = response;});
+  }
+  }

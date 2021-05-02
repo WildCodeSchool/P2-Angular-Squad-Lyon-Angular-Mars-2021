@@ -1,4 +1,23 @@
+.align-calendar-direct{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: -6px;
+    margin-bottom: -90px;
+    width: 100%;
+}
 
+.calendrier{
+    width: 30%;
+    transform: translateX(150px);
+}
+
+.direct-en-cour{
+    width: 40%;
+    margin-left: 20px;
+    margin-top: -120px;
+    margin-left: 34px;
+}
 
 
 /* largeur d'écran 1000px ex:ordi/tablette*/
@@ -12,13 +31,13 @@
         align-items: center;
     }
     .calendrier{
-        width: 100%;
-        margin-left: -350px;
+        width: 95%;
+        margin-left: -50px;
         font-size: 17px;
     }
     .direct-en-cour{
-        width: 100%;
-        margin-left: -60px;
+        width: 95%;
+        margin: auto;
         align-items: stretch;
         font-size: 17px;
         margin-bottom: 100px;

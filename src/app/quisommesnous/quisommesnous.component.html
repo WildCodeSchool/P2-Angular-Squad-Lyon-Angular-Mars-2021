@@ -116,109 +116,108 @@
 </section>
 
 <!-- Formulaire contact -->
-
-<section class="container-fluid graybackground">
-  <form (ngSubmit)="f.valid && onSubmit(f)" #f="ngForm" method="POST">
-    <div class="container contact">
-      <h1 class="contacternous">NOUS CONTACTER</h1>
+<section class="container-fluid">
+  <div class="formulaire">
+    <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm" method="POST">
+      <h1 class="contacterNous">NOUS CONTACTER</h1>
       <hr class="hr-titleH1" />
-      <div class="row">
-        <input
-          #nomPrenom="ngModel"
-          placeholder="Saisissez votre nom & prénom"
-          class="form-control col-md-12 col-xs-12 inputcontact"
-          type="text"
-          name="name"
-          ngModel
-          required
-          minlength="3"
-        />
-        <br /><br />
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-block">
+            <label for="name">Nom</label>
+            <input
+              #nomPrenom="ngModel"
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="Saisissez votre nom & prénom"
+              ngModel
+              required
+              minlength="3"
+            />
+            <div *ngIf="form.submitted && nomPrenom.errors">
+              <span class="errors" *ngIf="nomPrenom.errors?.required"
+                >Le nom et le prénom sont requis.</span
+              >
 
-        <!-- Formulaire contact : Vérification / validation 1-->
-        <div *ngIf="f.submitted && nomPrenom.errors">
-          <span class="errors" *ngIf="nomPrenom.errors?.required"
-            >Le nom et le prénom est requis</span
-          >
-
-          <span class="errors" *ngIf="nomPrenom.errors?.minlength"
-            >Le nom et le prénom est requis</span
-          >
+              <span class="errors" *ngIf="nomPrenom.errors?.minlength"
+                >Le nom et le prénom sont requis.</span
+              >
+            </div>
+          </div>
         </div>
+        <div class="col-12">
+          <div class="form-block">
+            <label for="mail">Adresse mail</label>
+            <input
+              #email="ngModel"
+              type="text"
+              class="form-control"
+              name="email"
+              placeholder="Saisissez votre email"
+              pattern="^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$"
+              ngModel
+              required
+            />
+            <div *ngIf="form.submitted && email.errors">
+              <span class="errors" *ngIf="email.errors?.required">
+                Votre email est requis.</span
+              >
 
-        <input
-          #email="ngModel"
-          placeholder="Saisissez votre email"
-          class="col-md-12 col-xs-12 inputcontact"
-          type="text"
-          name="email"
-          ngModel
-          required
-          pattern="^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$"
-        /><br /><br />
-
-        <div *ngIf="f.submitted && email.errors">
-          <span class="errors" *ngIf="email.errors?.required">
-            Email requis</span
-          >
-
-          <span class="errors" *ngIf="email.errors?.pattern"
-            >Format email incorrect
-          </span>
+              <span class="errors" *ngIf="email.errors?.pattern"
+                >Le format de l'email est incorrect.
+              </span>
+            </div>
+          </div>
         </div>
+        <div class="col-12">
+          <div class="form-block">
+            <label for="tel">Téléphone</label>
+            <input
+              #telephone="ngModel"
+              type="text"
+              class="form-control"
+              name="telephone"
+              placeholder="Saisissez votre numéro"
+              ngModel
+              required
+              minlength="10"
+              maxlength="10"
+            />
+            <div *ngIf="form.submitted && telephone.errors">
+              <span class="errors" *ngIf="telephone.errors?.required"
+                >Votre numéro de téléphone est requis.</span
+              >
 
-        <input
-          #telephone="ngModel"
-          placeholder="Saisissez votre numéro de téléphone"
-          class="col-md-12 col-xs-12 inputcontact"
-          type="text"
-          name="telephone"
-          ngModel
-          required
-          minlength="10"
-          maxlength="10"
-        /><br /><br />
+              <span class="errors" *ngIf="telephone.errors?.minlength"
+                >Votre numéro de téléphone doit contenir 10 chiffres.</span
+              >
 
-        <div *ngIf="f.submitted && telephone.errors">
-          <span class="errors" *ngIf="telephone.errors?.required"
-            >Votre numéro doit contenir 10 chiffres</span
-          >
-
-          <span class="errors" *ngIf="telephone.errors?.minlength"
-            >Votre numéro doit contenir 10 chiffres</span
-          >
-
-          <span *ngIf="telephone.errors?.maxlength"
-            >Votre numéro doit contenir 10 chiffres</span
-          >
+              <span class="errors" *ngIf="telephone.errors?.maxlength"
+                >Votre numéro de téléphone doit contenir 10 chiffres.</span
+              >
+            </div>
+          </div>
         </div>
-
-        <input
-          #message="ngModel"
-          placeholder="Votre message ici ..."
-          class="col-md-12 col-xs-12 inputtext"
-          type="text"
-          name="message"
-          ngModel
-          required
-          minlength="1"
-        /><br /><br />
-        <br /><br />
-
-        <div *ngIf="f.submitted && message.errors">
-          <span class="errors" *ngIf="message.errors?.required"
-            >Saisissez votre message</span
-          >
-
-          <span class="errors" *ngIf="message.errors?.minlength"
-            >Saisissez votre message
-          </span>
-        </div>
-
-        <button type="submit" class="col-md-12 col-xs-2 boutonenvoyer">
-          envoyer</button
-        ><br /><br />
       </div>
-    </div>
-  </form>
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-block">
+            <label for="message">Message</label>
+            <textarea
+              #message="ngModel"
+              class="form-control"
+              placeholder="Votre message ici..."
+              ngModel
+              required
+              minlength="1"
+            ></textarea>
+            <div class="text-center">
+              <button class="btn">Envoyer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </section>

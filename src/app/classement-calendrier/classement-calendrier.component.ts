@@ -33,29 +33,29 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   constructor(private service: CalendrierClassementService) { }
 
   ngOnInit(): void {
-    this.service.getCalendar().subscribe((api_matchs) => {
-      this.matchesToDisplay = api_matchs;
-      if (this.matchesToDisplay.length !== 0) {
-        this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
-      }
-    })
+    // this.service.getCalendar().subscribe((api_matchs) => {
+    //   this.matchesToDisplay = api_matchs;
+    //   if (this.matchesToDisplay.length !== 0) {
+    //     this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
+    //   }
+    // })
   }
 
 
   // Nécessaire pour la pagination
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {
-    // Appel du service
-    this.service.getStanding().subscribe((api_standing) => {
-      // Remplissage du tableau pour chaque équipe présente dans la ligue
-      api_standing.forEach(equipe => {
-        this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
-      });
+    // // Appel du service
+    // this.service.getStanding().subscribe((api_standing) => {
+    //   // Remplissage du tableau pour chaque équipe présente dans la ligue
+    //   api_standing.forEach(equipe => {
+    //     this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
+    //   });
 
-      this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
-      // Nécessaire pour la pagination
-      this.dataSource.paginator = this.paginator;
-    })
+    //   this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
+    //   // Nécessaire pour la pagination
+    //   this.dataSource.paginator = this.paginator;
+    // })
 
 
 

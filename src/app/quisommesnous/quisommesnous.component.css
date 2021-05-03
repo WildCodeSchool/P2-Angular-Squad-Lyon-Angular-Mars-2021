@@ -10,11 +10,10 @@
   border: 1px solid rgb(224, 36, 83);
 }
 
-
 /* Partie 1 de page Qui sommes-nous (tout avant l'équipe)*/
 .titlequisommesnous,
 .equipe,
-.contacternous {
+.contacterNous {
   font-size: 25px;
   font-weight: 100px;
   text-align: center;
@@ -37,15 +36,13 @@
 
 /* Partie L'Equipe de page Qui sommes-nous */
 
-
-
 .membreequipe {
   flex-direction: column;
   align-items: center;
 }
 
 .img {
-    border: none;
+  border: none;
 }
 .team-member-name {
   text-align: center;
@@ -67,55 +64,68 @@
 }
 
 /* Partie CONTACTER-NOUS de page Qui sommes-nous */
-.contact{
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-
-}
-
-.graybackground {
+.formulaire form {
+  padding: 40px;
   background-color: #f2f2f2;
-  height: 800px;
-  
+  margin: 40px 0;
+  border-radius: 15px;
 }
-
-.inputcontact {
-  
-  height: 35px;
-  align-self: center;
-  border: grey;
+.formulaire form .form-control {
+  border-radius: 0;
+  border: solid 1px #d2d2dd;
+  padding: 20px 0 20px 10px;
+  margin-bottom: 20px;
+  transition-duration: 0.5s;
+  background-color: white;
+  border-radius: 25px;
+}
+.formulaire form .form-control:focus {
+  border: solid 1px #dc3545;
+}
+.formulaire form .form-block {
+  position: relative;
+}
+.formulaire form .form-block label {
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  display: block;
+  opacity: 0;
+  -webkit-transition: top 0.5s ease, opacity 0.5s ease;
+  -moz-transition: top 0.5s ease, opacity 0.5s ease;
+  -ms-transition: top 0.5s ease, opacity 0.5s ease;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+.formulaire form .form-block-value label {
+  top: 3px;
+  opacity: 1;
+}
+.formulaire form .form-block-focus label {
+  color: #dc3545;
+}
+.formulaire form textarea {
+  height: 150px;
+}
+.formulaire form .btn {
+  background-color: #dc3545;
+  color: #fff;
+  margin-top: 20px;
+  padding: 5px 20px;
+  transition-duration: 0.5s;
   border-radius: 30px;
-  margin: auto;
+  width: 100%;
+  font-weight: bolder;
 }
-
-.inputtext{
- 
-    height: 200px;
-    align-items: center;
-    border: grey;
-    border-radius: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  
-.boutonenvoyer{
-    background-color: red;
-    color: white;
-    font-weight: bolder;
-    border-radius: 30px;
-    border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 5%;
+.formulaire form .btn:hover {
+  color: black;
 }
-
-input::placeholder{
-    text-align: center;
-    opacity: 0.5;
-}
-
-.errors{
+.errors {
   color: red;
+}
+input::placeholder {
+  text-align: center;
+}
+textarea::placeholder {
+  text-align: center;
 }

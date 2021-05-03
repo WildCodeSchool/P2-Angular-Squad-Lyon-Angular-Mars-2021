@@ -37,9 +37,9 @@ export class DirectencoursComponent implements OnInit {
     // this.service.getScore().subscribe((url) =>{this.listScore=url  
       
     
-    // }
+    //  }
     
-    // )
+    //  )
    
 
 }

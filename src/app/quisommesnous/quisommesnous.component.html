@@ -68,8 +68,8 @@
           src="./assets/img/imgQuisommesnous/img3-team.png"
           alt="image ceo"
         />
-        <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe"> Chargé de Com</P>
+        <h3 class="team-member-name">Fethi BETTAHAR</h3>
+        <P class="posteoccupe"> Responsable Ressources Humaines </P>
       </div>
       <div class="col-md-4 col-xs-12">
         <img
@@ -78,7 +78,7 @@
           alt="image ceo"
         />
         <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe"> Chargé de Com</P>
+        <P class="posteoccupe">Président Directeur Général</P>
       </div>
       <div class="col-md-4 col-xs-12">
         <img
@@ -87,8 +87,8 @@
           class="col-md-12"
           alt="image ceo"
         />
-        <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe"> Chargé de Com</P>
+        <h3 class="team-member-name">Rachid Leboukh</h3>
+        <P class="posteoccupe"> Responsable Commercial</P>
       </div>
     </div>
 
@@ -99,8 +99,8 @@
           class="col-md-12"
           alt="image ceo"
         />
-        <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe"> Chargé de Com</P>
+        <h3 class="team-member-name">Maxime DIAS</h3>
+        <P class="posteoccupe"> Responsable Informatique</P>
       </div>
       <div class="col-md-4 col-xs-12">
         <img
@@ -108,8 +108,8 @@
           src="./assets/img/imgQuisommesnous/img5-team.png"
           alt="image ceo"
         />
-        <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe"> Chargé de Com</P>
+        <h3 class="team-member-name">Gabrielle K/BIDI</h3>
+        <P class="posteoccupe"> Responsable Communication</P>
       </div>
     </div>
   </div>
@@ -206,14 +206,16 @@
             <label for="message">Message</label>
             <textarea
               #message="ngModel"
+              type="text"
               class="form-control"
+              name="message"
               placeholder="Votre message ici..."
               ngModel
               required
               minlength="1"
             ></textarea>
             <div class="text-center">
-              <button class="btn">Envoyer</button>
+              <button class="btn" (click)="onSubmit">Envoyer</button>
             </div>
           </div>
         </div>

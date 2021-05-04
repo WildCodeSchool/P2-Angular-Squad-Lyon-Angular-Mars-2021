@@ -73,11 +73,13 @@
 .formulaire form .form-control {
   border-radius: 0;
   border: solid 1px #d2d2dd;
-  padding: 20px 0 20px 10px;
+  padding: 30px 0 30px 10px;
   margin-bottom: 20px;
   transition-duration: 0.5s;
   background-color: white;
   border-radius: 25px;
+  width: 80%;
+  margin: 0 auto ;
 }
 .formulaire form .form-control:focus {
   border: solid 1px #dc3545;
@@ -105,17 +107,18 @@
   color: #dc3545;
 }
 .formulaire form textarea {
-  height: 150px;
+  height: 170px;
+
 }
 .formulaire form .btn {
   background-color: #dc3545;
   color: #fff;
-  margin-top: 20px;
   padding: 5px 20px;
   transition-duration: 0.5s;
   border-radius: 30px;
-  width: 100%;
+  width: 80%;
   font-weight: bolder;
+  margin-top: 50px;
 }
 .formulaire form .btn:hover {
   color: black;
@@ -130,6 +133,3 @@ textarea::placeholder {
   text-align: center;
 }
 
-window.alert{
-  border-radius: 25px;
-}

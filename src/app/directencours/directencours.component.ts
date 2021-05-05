@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatchDirect } from '../common/match.model';
-import { ScoredirectService } from '../common/scoredirect.service';
 
 
 interface Direct {

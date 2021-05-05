@@ -1,6 +1,6 @@
 nav {
   font-family: "Roboto";
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /* Underline Effect*/
@@ -36,7 +36,6 @@ nav {
 
 .autremenu {
   font-size: 90%;
-  font-weight: bold;
   color: rgb(207, 207, 207);
 
   opacity: 1;
@@ -44,11 +43,6 @@ nav {
   -webkit-transform: translateY(0px);
   transform: translateY(0px);
   bottom: 0px;
-  background: #89fd33;
-}
-
-.qsnmenu {
-  font-size: 60%;
 }
 
 @media (max-width: 767px) {
@@ -60,5 +54,6 @@ nav {
     font-weight: bold;
     color: rgb(207, 207, 207);
     width: 30%;
+    background: #ffffff;
   }
 }

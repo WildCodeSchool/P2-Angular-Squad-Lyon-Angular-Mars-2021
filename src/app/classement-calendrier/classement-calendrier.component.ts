@@ -48,10 +48,14 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
     //   api_standing.forEach(equipe => {
     //     this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
     //   });
+
     //   this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
     //   // Nécessaire pour la pagination
     //   this.dataSource.paginator = this.paginator;
     // })
+
+
+
   }
   //  MD - TODO:
   //  - Voir si pas possible d'avoir deux paginators material || CSS de la pagination des matches du jour

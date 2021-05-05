@@ -4,9 +4,9 @@ import { ArticlesService } from '../common/articles.service';
 import { Router } from '@angular/router'
 
 @Component({
-selector: 'app-news',
-templateUrl: './news.component.html',
-styleUrls: ['./news.component.css'],
+    selector: 'app-news',
+    templateUrl: './news.component.html',
+    styleUrls: ['./news.component.css'],
 })
 export class NewsComponent implements OnInit {
     //je crée ma liste d'articles

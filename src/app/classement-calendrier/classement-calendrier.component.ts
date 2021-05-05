@@ -5,7 +5,7 @@ import { CalendrierClassementService } from '../common/calendrier-classement.ser
 
 // Définition de l'interface pour le classement
 export interface ClassementElement {
-  P: number
+  P: number;
   CLUBS: string;
   PTS: number;
   J: number;
@@ -15,22 +15,20 @@ export interface ClassementElement {
 @Component({
   selector: 'app-classement-calendrier',
   templateUrl: './classement-calendrier.component.html',
-  styleUrls: ['./classement-calendrier.component.css']
+  styleUrls: ['./classement-calendrier.component.css'],
 })
 export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   // Nécessaire pour la pagination matchesDuJour
   page = 1;
-  matchesToDisplay: any[] = []
-  matchesJournee: string
+  matchesToDisplay: any[] = [];
+  matchesJournee: string;
 
   // Définition des colonnes du classement
   displayedColumns: string[] = ['P', 'CLUBS', 'PTS', 'J', 'DIFF'];
-  ELEMENT_DATA: ClassementElement[] = []
-
-
+  ELEMENT_DATA: ClassementElement[] = [];
 
   public dataSource: any;
-  constructor(private service: CalendrierClassementService) { }
+  constructor(private service: CalendrierClassementService) {}
 
   ngOnInit(): void {
     // this.service.getCalendar().subscribe((api_matchs) => {
@@ -40,7 +38,6 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
     //   }
     // })
   }
-
 
   // Nécessaire pour la pagination
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -60,14 +57,8 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
 
 
   }
-  //  MD - TODO: 
+  //  MD - TODO:
   //  - Voir si pas possible d'avoir deux paginators material || CSS de la pagination des matches du jour
   //  - Optimisation (beaucoup de code dans le ts pourrait être passé dans le service imo)
   //  - Verifications diverses à faire dans le ts et dans le service (si renvoi de requete pas vide etc..)
-
-
-
-
-
-
 }

@@ -1,5 +1,6 @@
 <main class="calendar">
   <div class="container">
+  
     <mat-tab-group>
       <section id="calendrierSection">
         <!------------------ONGLET CALENDRIER------------------->
@@ -11,7 +12,7 @@
           <!-----popup CALENDRIER------>
 
           <mat-form-field color="accent" appearance="fill">
-            <mat-label>Choisissez une date</mat-label>
+            <mat-label> <span class="textselect">Choisissez une date</span> </mat-label>
             <input matInput [matDatepicker]="picker2" />
             <mat-datepicker-toggle
               matSuffix
@@ -22,25 +23,25 @@
 
           <!-----FILTRE CALENDRIER------>
 
-          <div class="filter-container">
-            <div class="styled1">
-              <select name="pays">
+          <div class="filter-container ">
+            <div class="styled1 ">
+              <select name="pays" >
                 <option value="" hidden>Pays</option>
                 <option value="france">France</option>
                 <option value="allemagne">Allemagne</option>
-                <option value="espagne">Espagne</option>
-                <option value="angleterre">Angleterre</option>
-                <option value="etats-unis">Etats-Unis</option>
+                <option class ="selectsizer" value="espagne">Espagne</option>
+                <option class ="selectsizer" value="angleterre">Angleterre</option>
+                <option class ="selectsizer" value="etats-unis">Etats-Unis</option>
               </select>
             </div>
 
-            <div class="styled2">
+            <div class="styled2 ">
               <select name="ligue">
                 <option value="" hidden>Ligue</option>
-                <option value="d1arkema">D1 Arkema</option>
-                <option value="coupefrance">Coupe de France</option>
-                <option value="liguechampion">Ligue des Champions</option>
-                <option value="euro">Euro</option>
+                 <option value="d1arkema"><span class ="selectsizer" ></span>D1 Arkema</option>
+                <option class ="selectsizer" value="coupefrance">Coupe de France</option>
+                <option class ="selectsizer" value="liguechampion">Ligue des Champions</option>
+                <option class ="selectsizer" value="euro">Euro</option>
               </select>
             </div>
           </div>
@@ -53,7 +54,7 @@
                 class="no-match"
                 *ngIf="matchesToDisplay.length == 0; else matchesDuJour"
               >
-                <p>Aucun match ce jour</p>
+                <p class="AucunMatch">Aucun match ce jour</p>
               </div>
               <ng-template #matchesDuJour>
                 <tr
@@ -65,7 +66,7 @@
                   <td>
                     {{ match.teams.home.name }}
                   </td>
-                  <td>
+                  <td class="mybold">
                     {{ match.score.fulltime.home }} -
                     {{ match.score.fulltime.away }}
                   </td>
@@ -76,7 +77,7 @@
               </ng-template>
             </tbody>
           </table>
-          <ngb-pagination
+          <ngb-pagination class="pagination"
             [(page)]="page"
             [pageSize]="5"
             [collectionSize]="matchesToDisplay.length"
@@ -90,7 +91,7 @@
           <ng-template mat-tab-label>
             CLASSEMENT
             <img
-              src="assets/img/trophy.svg"
+              src="assets/img/imgLogoIcon/trophy.svg"
               alt="logo"
               width="23px"
               height="23px"

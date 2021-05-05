@@ -1,6 +1,6 @@
 .backgroundDirectencours {
   background-color: gainsboro;
-  height: 400px;
+  height: 550px;
   box-shadow: 0 0 13px;
 }
 
@@ -31,9 +31,10 @@
   vertical-align: middle;
 }
 
-/*.directencours{
- min-width: 20px;
-}*/
+h1.directencours {
+  margin-left: 5%;
+  font-size: 22px;
+}
 
 .text-deco-none {
   text-decoration: none;
@@ -51,9 +52,10 @@ table {
   width: 100%;
   display: flex;
   text-align: center;
-  margin-top: 5px;
   justify-content: space-around;
   font-size: 20px;
+  height: 100%;
+  font-size: 12px;
 }
 
 th {
@@ -77,6 +79,7 @@ td {
 
 .table {
   background-color: white;
+  height: 79%;
 }
 
 ::ng-deep .mat-tab {
@@ -84,15 +87,25 @@ td {
 }
 
 mat-tab-group {
-  height: 250px;
-}
-
-.matchdirectsize {
-  font-size: 12px;
 }
 
 .AucunMatch {
   text-align: center;
-  margin-top: 10%;
   color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+@media (max-width: 767px) {
+  .AucunMatch {
+    text-align: center;
+    font-size: 85%;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
 }

@@ -1,6 +1,23 @@
 .calendar {
   width: 100%;
-  height: 700px;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  height: 100%;
+}
+
+.container {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+select {
+  font-size: 14px;
+  justify-content: center;
+  font-weight: bolder;
 }
 
 .mat-tab-label {
@@ -9,12 +26,18 @@
   align-items: center;
 }
 
+mat-label {
+  font-size: 14px;
+}
+
 mat-tab-group {
   width: 100%;
-  margin: 7%;
+  margin: 0px;
+  padding: 0px;
   font-family: "Roboto";
   font-size: 21px;
   box-shadow: 0 0 23px;
+  height: 100%;
 }
 
 /* ONGLETS */
@@ -25,8 +48,8 @@ mat-icon {
 
 /* active tab */
 ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
-  color: black;
-  background-color: #616161;
+  color: rgb(47, 47, 47);
+  background-color: #c2c2c2;
 }
 
 /* ink bar */
@@ -75,12 +98,29 @@ div.styled2 select {
   justify-content: space-around;
   margin-bottom: 5%;
 }
+ngb-pagination {
+  font-size: 10px;
+  justify-items: center;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.AucunMatch {
+  text-align: center;
+  color: gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
 
 #filter-classement {
   margin-top: 10px;
 }
 /* logo equipes */
-.logo{
+.logo {
   height: 20px;
   width: 20px;
 }
@@ -96,10 +136,14 @@ select {
 /* TITRE JOURNEE CALENDRIER */
 h3 {
   color: rgb(248, 246, 246);
-  background-color: grey;
+  background-color: #333333;
   text-align: center;
   margin: 0 auto;
   padding: 10px;
+}
+
+.mybold {
+  font-weight: bolder;
 }
 
 /* TABLEAU CALENDRIER */
@@ -124,4 +168,50 @@ img {
 .matchTableau {
   text-align: center;
   font-size: 70%;
+}
+
+@media (max-width: 767px) {
+  div.styled1 {
+    width: 5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 1px #ccc;
+    text-align: center;
+  }
+
+  div.styled2 {
+    width: 5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 1px #ccc;
+  }
+
+  .container {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .calendar {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 95%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .AucunMatch {
+    text-align: center;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  select {
+    width: 1px;
+  }
 }

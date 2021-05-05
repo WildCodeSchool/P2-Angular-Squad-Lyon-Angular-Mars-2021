@@ -2,8 +2,8 @@
   class="navbar navbar-expand-md navbar-light bg-white d-flex justify-content-between"
 >
   <a class="navbar-brand" [routerLink]="['/football']">
-    <picture>
-      <source
+    <picture >
+      <source  
         srcset="../../assets/img/imgLogoIcon/logoDf.png"
         media="(min-width: 768px)"
       />
@@ -41,12 +41,15 @@
       <li class="nav-item">
         <a class="nav-link text-dark" [routerLink]="['/rugby']">Rugby</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]="['/tennis']">Tennis</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]="['/news']">News</a>
+    </ul>
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item qsnmenu  ">
+        <a class="nav-link text-dark" [routerLink]="['/about']">Qui sommes-nous</a>
+      </li> 
+      <li class="nav-item autremenu">
+        <a class="nav-link text-dark newT " [routerLink]="['/news']">News</a>
       </li>
     </ul>
+    
   </div>
 </nav>

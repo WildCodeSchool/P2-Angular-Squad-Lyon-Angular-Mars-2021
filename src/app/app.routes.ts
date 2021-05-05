@@ -10,6 +10,7 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
 import { QuisommesnousComponent } from './quisommesnous/quisommesnous.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 
@@ -21,8 +22,11 @@ const route: Routes = [
   { path: 'rugby', component: RugbyComponent },
   { path: 'tennis', component: TennisComponent },
   { path: 'contact', component: QuisommesnousComponent },
+  { path: 'about', component: QuisommesnousComponent },
   { path: 'news', component: ArticlesListComponent },
-  { path: "**",component: PageNotFoundComponent }
+  { path: "**",component: PageNotFoundComponent },
+  { path: 'articles/:articleID', component: ArticlesComponent},
+  
 
 ];
 

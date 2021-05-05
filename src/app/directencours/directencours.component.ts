@@ -34,12 +34,12 @@ export class DirectencoursComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getScore().subscribe((url) =>{this.listScore=url  
+    // this.service.getScore().subscribe((url) =>{this.listScore=url  
       
     
-    }
+    // }
     
-    )
+    // )
    
 
 }

@@ -126,7 +126,7 @@
         <input
           #nomPrenom="ngModel"
           placeholder="Saisissez votre nom & prénom"
-          class="form-control col-md-12 col-xs-12 inputcontact"
+          class="form-control col-md-12 col-xs-12 inputcontact2"
           type="text"
           name="name"
           ngModel
@@ -167,7 +167,7 @@
           </span>
         </div>
 
-        <input
+        <input 
           #telephone="ngModel"
           placeholder="Saisissez votre numéro de téléphone"
           class="col-md-12 col-xs-12 inputcontact"
@@ -180,7 +180,7 @@
         /><br /><br />
 
         <div *ngIf="f.submitted && telephone.errors">
-          <span class="errors" *ngIf="telephone.errors?.required"
+          <span class="errors inputcontact" *ngIf="telephone.errors?.required"
             >Votre numéro doit contenir 10 chiffres</span
           >
 
@@ -196,7 +196,7 @@
         <input
           #message="ngModel"
           placeholder="Votre message ici ..."
-          class="col-md-12 col-xs-12 inputtext"
+          class="col-md-12 col-xs-12 inputtext marginerror"
           type="text"
           name="message"
           ngModel
@@ -205,12 +205,12 @@
         /><br /><br />
         <br /><br />
 
-        <div *ngIf="f.submitted && message.errors">
-          <span class="errors" *ngIf="message.errors?.required"
+        <div class="marginerror" *ngIf="f.submitted && message.errors">
+          <span class="errors " *ngIf="message.errors?.required"
             >Saisissez votre message</span
           >
 
-          <span class="errors" *ngIf="message.errors?.minlength"
+          <span class="errors " *ngIf="message.errors?.minlength"
             >Saisissez votre message
           </span>
         </div>

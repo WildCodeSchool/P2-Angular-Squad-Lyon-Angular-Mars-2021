@@ -16,63 +16,73 @@ interface Direct {
 
 export class DirectencoursComponent implements OnInit {
 
-  // j'indique la clé API utilisée
-  headerOptions = {
-		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-		"x-rapidapi-key": "58c69161d2msh3de4f5b3da8ae42p1ad5c9jsn3f8a6a46fd01"
-	}
-  requestOptions = {                                                                                                                                                                                 
-    headers: new HttpHeaders(this.headerOptions), 
-  };
+  matchListFrance: MatchDirect[] = [
+    {
+    equipeDomicile: "PSG",
+    scoreDomicile: 1,
+    equipeExterieur: "Soyaux",
+    scoreExterieur: 4
+  },
+  {
+    equipeDomicile: "Guingamp",
+    scoreDomicile: 1,
+    equipeExterieur: "Le HAC",
+    scoreExterieur: 3
+  },
+  {
+    equipeDomicile: "OL",
+    scoreDomicile: 3,
+    equipeExterieur: "Montpellier",
+    scoreExterieur: 2
+  },
+  ]
+  
+  matchListItalie: MatchDirect[] = [
+    {
+    equipeDomicile: "Juventus FC",
+    scoreDomicile: 1,
+    equipeExterieur: "FBC",
+    scoreExterieur: 2
+  },
+  {
+    equipeDomicile: "AC Milan",
+    scoreDomicile: 3,
+    equipeExterieur: "Bari",
+    scoreExterieur: 4
+  },
+  {
+    equipeDomicile: "AS Roma",
+    scoreDomicile: 1,
+    equipeExterieur: "ACF Fiorentina",
+    scoreExterieur: 2
+  },
+  ]
+  
+  matchListUsa: MatchDirect[] = [
+    {
+    equipeDomicile: "Chigaco F",
+    scoreDomicile: 3,
+    equipeExterieur: "Washigton F",
+    scoreExterieur: 0
+  },
+  {
+    equipeDomicile: "Houston Dash F",
+    scoreDomicile: 2,
+    equipeExterieur: "Racing Louisville F",
+    scoreExterieur: 1
+  },
+  {
+    equipeDomicile: "Reign F",
+    scoreDomicile: 0,
+    equipeExterieur: "Gotham F",
+    scoreExterieur: 3
+  },
+  ]
 
-  public listScore: any = [];
-  private url:string = "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all"
-  public listePays: string[] = [];
-  public resultPays: string;
-
-  public matchDirect: MatchDirect[];
-  public matchListFrance: MatchDirect[] = [];
-
-  constructor(public service: ScoredirectService, private http : HttpClient) { 
-    this.service = service;
-
+  constructor() {
   }
 
 ngOnInit(): void {
-/* this.service.getScore().subscribe((url) =>{ 
-    this.listScore=url;
-    console.log(this.listScore)
-})*/ 
-this.listePays.push("France", "Espagne", "USA",)
-
-};
-
-getMatchDirectFrance() {
-  return this.matchListFrance;
+ 
 }
-
-getResultbyCountry(index:number) {
-  alert("this.getResultbyCountry")
-  this.resultPays = this.listePays[index];
-  console.log(this.listePays[index])
-
-/*
-
-   else if(this.listePays[1] === "Espagne"){
-   observable  = this.service.get(this.url+"&league=142",this.requestOptions);
-  }
-  else if(this.listePays[2] === "USA"){
-   observable  = this.service.get(this.url+"&league=254&league=641",this.requestOptions);
-  }
-  else if(this.listePays[3] === "Allemagne"){
-   observable  = this.service.get(this.url+"&league=82",this.requestOptions);
-  }
-  else if(this.listePays[4] === "Angleterre"){
-   observable  = this.service.get(this.url+"&league=44",this.requestOptions);
-  }
-  else if(this.listePays[5] === "Italie"){
-   observable  = this.service.get(this.url+"&league=139",this.requestOptions);
-}*/
-}
-
 }

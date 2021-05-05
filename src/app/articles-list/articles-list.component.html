@@ -1,40 +1,7 @@
 <section class="news">
   <h2>NEWS</h2>
   <hr class="hr-news" />
-  <div class="filters">
-    <div class="select-container" id="left">
-      <select
-        name="Discipline"
-        #discipline
-        [(ngModel)]="disciplineFiltre"
-        class="select-discipline"
-      >
-        <option value="Discipline" selected disabled hidden>Discipline</option>
-        <option
-          *ngFor="let sport of disciplineFiltre"
-          [ngValue]="sport"
-          selected
-        >
-          {{ sport.sportName }}
-        </option>
-        <!----
-        <option selected disabled hidden>Discipline</option>
-        <option value="football">Football</option>
-        <option value="basketball">Basketball</option>
-        <option value="rugby">Rugby</option>
-        <option value="tennis">Tennis</option>- -->
-      </select>
-    </div>
-    <div class="select-container" id="mid">
-      <select class="select-pays">
-        <option selected disabled hidden>Pays</option>
-        <option value="france">France</option>
-        <option value="usa">USA</option>
-        <option value="royaumeUni">R-U</option>
-        <option value="Allemagne">Allemagne</option>
-      </select>
-    </div>
-  </div>
+
   <div class="articlesList">
     <!------------>
     <!-- Création de la structure pour chaque article dans la liste -->

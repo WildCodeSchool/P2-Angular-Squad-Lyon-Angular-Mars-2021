@@ -9,17 +9,12 @@ import { Article } from '../common/article.model';
 })
 export class ArticlesListComponent implements OnInit {
   public articles: Article[]= [];
-  public disciplineFiltre: string[] = [];
 
   constructor(public articlesService: ArticlesService) {}
   
   ngOnInit(): void {
+    // je lance la souscription pour l'affichage des articles via le fichier JSON
       this.articlesService.getArticles().subscribe((response: Article[]) => {
-          this.articles = response;});
-
-          this.articlesService.getFilters().subscribe((response: string[]) => {
-            return this.disciplineFiltre =  response;});
-            console.log(this.disciplineFiltre)
-            
+          this.articles = response;});            
   }
 }

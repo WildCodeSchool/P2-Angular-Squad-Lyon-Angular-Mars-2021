@@ -45,6 +45,7 @@
                 <p class="AucunMatch">Aucun match ce jour</p>
               </div>
               <ng-template #matchesDuJour>
+                <!--Pour la pagination-->
                 <tr *ngFor="
                     let match of matchesToDisplay
                       | slice: (page - 1) * 5:page * 5

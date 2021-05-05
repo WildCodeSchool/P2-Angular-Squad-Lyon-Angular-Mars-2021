@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Hermann ADINSI",
+        "role": "Oui",
+        "img": "../assets/img/imgQuisommesnous/img3-team.png"
+    },
+    {
+        "name": "Fethi Bettahar",
+        "role": "Oui",
+        "img": "../assets/img/imgQuisommesnous/img1-team.png"
+    },
+    {
+        "name": "Rachid Leboukh",
+        "role": "Oui",
+        "img": "../assets/img/imgQuisommesnous/img2-team.png"
+    },
+    {
+        "name": "Maxime Dias",
+        "role": "Oui",
+        "img": "../assets/img/imgQuisommesnous/img4-team.png"
+    },
+    {
+        "name": "Gabrielle Kbidi",
+        "role": "Oui",
+        "img": "../assets/img/imgQuisommesnous/img5-team.png"
+    }
+]

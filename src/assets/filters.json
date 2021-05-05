@@ -1,0 +1,69 @@
+[
+    [
+        {
+            "name": "Allemagne",
+            "league1": {
+                "name": "Women Bundesliga",
+                "id": 82
+            }
+        },
+        {
+            "name": "Angleterre",
+            "league1": {
+                "name": "FA WSL",
+                "id": 44
+            }
+        },
+        {
+            "name": "Espagne",
+            "league1": {
+                "name": "Primera Division Women",
+                "id": 142
+            }
+        },
+        {
+            "name": "États-Unis",
+            "league1": {
+                "name": "NWSL Women",
+                "id": 254
+            }
+        },
+        {
+            "name": "France",
+            "league1": {
+                "name": "D1 Arkema",
+                "id": 64
+            }
+        }
+    ],
+    [
+        {
+            "name": "Allemagne",
+            "league1": {
+                "name": "DBBL Women",
+                "id": 41
+            }
+        },
+        {
+            "name": "Angleterre",
+            "league1": {
+                "name": "WBBL W",
+                "id": 109
+            }
+        },
+        {
+            "name": "Espagne",
+            "league1": {
+                "name": "Liga Femenina W",
+                "id": 94
+            }
+        },
+        {
+            "name": "France",
+            "league1": {
+                "name": "LFB W",
+                "id": 10
+            }
+        }
+    ]
+]

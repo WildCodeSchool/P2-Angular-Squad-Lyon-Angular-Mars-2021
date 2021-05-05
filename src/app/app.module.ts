@@ -27,8 +27,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-import {NgForm} from '@angular/forms'
+import { NgForm } from '@angular/forms'
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -55,7 +55,7 @@ import {NgForm} from '@angular/forms'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(route, {scrollPositionRestoration: 'top'}),
+    RouterModule.forRoot(route, { scrollPositionRestoration: 'top' }),
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -67,8 +67,8 @@ import {NgForm} from '@angular/forms'
     MatIconModule,
     HttpClientModule
   ],
-  
-  providers: [],
+
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

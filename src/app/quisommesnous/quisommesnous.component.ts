@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Membre } from '../common/membre.model';
+import { MembresService } from '../common/membres.service';
 
 
 @Component({
@@ -8,13 +10,17 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./quisommesnous.component.css']
 })
 export class QuisommesnousComponent implements OnInit {
-
-  constructor() { }
+  membersList: Membre[]
+  constructor(private membresService: MembresService) { }
 
   ngOnInit(): void {
+    this.membresService.getMembers().subscribe((list: Membre[]) => {
+      this.membersList = list
+      console.log(this.membersList)
+    })
   }
 
-    onSubmit (form: NgForm){
+  onSubmit(form: NgForm) {
     console.log(form.value);
     form.resetForm();
   }

@@ -26,22 +26,23 @@ export class DirectencoursComponent implements OnInit {
     { value: 'Maroc-2', viewValue: 'Maroc' }
   ];
 
-  public listScore:[]= [];
-  public service: ScoredirectService ;
+  public listScore: [] = [];
+  public service: ScoredirectService;
 
-  constructor(service: ScoredirectService){
+  constructor(service: ScoredirectService) {
     this.service = service;
   }
 
   ngOnInit(): void {
-    this.service.getScore().subscribe((url) =>{this.listScore=url  
-      
-    
-    }
-    
-    )
-   
+    // this.service.getScore().subscribe((url) => {
+    //   this.listScore = url
 
-}
-  
+
+    // }
+
+    // )
+
+
+  }
+
 }

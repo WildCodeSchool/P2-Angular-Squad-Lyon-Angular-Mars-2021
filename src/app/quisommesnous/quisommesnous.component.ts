@@ -15,7 +15,7 @@ export class QuisommesnousComponent implements OnInit {
   }
 
     onSubmit (form: NgForm){
-    console.log(form.value);
+    window.alert("Votre message a bien été transmis!");
     form.resetForm();
   }
 }

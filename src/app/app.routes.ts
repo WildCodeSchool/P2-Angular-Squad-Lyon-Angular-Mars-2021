@@ -15,7 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const route: Routes = [
 
-  { path: '', redirectTo: '/**', pathMatch: 'full' },
+  { path: '', redirectTo: '/football', pathMatch: 'full' },
   { path: 'football', component: FootballComponent },
   { path: 'basketball', component: BasketballComponent },
   { path: 'rugby', component: RugbyComponent },

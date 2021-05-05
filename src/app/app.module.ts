@@ -16,7 +16,6 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { FootballComponent } from './football/football.component';
 import { BasketballComponent } from './basketball/basketball.component';
-import { RugbyComponent } from './rugby/rugby.component';
 import { ClassementCalendrierComponent } from './classement-calendrier/classement-calendrier.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,7 +44,6 @@ import { DatePipe } from '@angular/common';
     ArticlesListComponent,
     FootballComponent,
     BasketballComponent,
-    RugbyComponent,
     ClassementCalendrierComponent,
     ArticlesComponent,
     PageNotFoundComponent

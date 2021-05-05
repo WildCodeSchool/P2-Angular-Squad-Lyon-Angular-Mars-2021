@@ -1,27 +1,39 @@
 import { Injectable } from '@angular/core';
-import { TestArticles } from './test-articles';
+import { Article } from './article.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
-  private service: HttpClient;
-
-  constructor(service: HttpClient, router: Router) {
-    this.service = service;
+//J'instancie le client HTTP pour faire la requête
+  constructor(private service: HttpClient) {
   }
-
-  public getArticles(): Observable<TestArticles[]> {
+// Je crée une fonction qui renvoie un observable de type tableau de la classe Article
+  public getArticles(): Observable<Article[]> {
+    // Je crée une variable qui va récupérer les données du fichier json
     const obs: Observable<any> = this.service.get('assets/newsData.json');
 
-    const treatment = (param_data: TestArticles[]) => { return param_data as TestArticles[];};
+// Je vais récupérer seulement ce que je souhaite : ici tout
+    const treatment = (param_data: Article[]) => { return param_data as Article[];};
+
+    // Je retourne le résultat en liant les deux méthodes map et traitement
     return obs.pipe(map(treatment));
 
+  }
+
+  public getFilters(): Observable<any> {
+        // Je crée une variable qui va récupérer les données du fichier json
+    const obs2: Observable<any> = this.service.get("assets/articleSportFilter.json");
+
+    // Je vais récupérer seulement ce que je souhaite : ici tout
+    const treatment2 = (param_data: string) => { return param_data as string};
+
+    // Je retourne le résultat en liant les deux méthodes map et traitement
+    return obs2.pipe(map(treatment2));
   }
 
 } 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Joueuse } from './common/joueuse';
+import { Joueuse } from './joueuse';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +18,14 @@ export class JoueusesSliderService {
       sport: 'Basketball',
       nom: 'Iliana Rupert',
       img: 'assets/img/imgSlider/rupert.png',
-      desc:'Le grand espoir du basket français.'
+      desc: 'Le grand espoir du basket français.'
 
     },
     {
       sport: 'Football',
       nom: 'Megan Rapinoe',
       img: 'assets/img/imgSlider/rapinoe.png',
-      desc:"Ballon d'Or de la dernière coupe du monde."
+      desc: "Ballon d'Or de la dernière coupe du monde."
 
     },
   ]

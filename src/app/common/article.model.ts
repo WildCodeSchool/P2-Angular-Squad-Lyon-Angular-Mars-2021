@@ -1,4 +1,4 @@
-export class TestArticles {
+export class Article {
   public link: string;
   public img: string;
   public sport: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../common/articles.service';
-import { TestArticles } from '../common/test-articles';
+import { Article } from '../common/article.model';
 
 @Component({
   selector: 'app-articles-list',
@@ -8,15 +8,13 @@ import { TestArticles } from '../common/test-articles';
   styleUrls: ['./articles-list.component.css'],
 })
 export class ArticlesListComponent implements OnInit {
-  public articles: TestArticles[];
-  public service: ArticlesService;
-  
-  constructor(public articlesService: ArticlesService) {
-      this.service = articlesService;
-  }
+  public articles: Article[]= [];
+
+  constructor(public articlesService: ArticlesService) {}
   
   ngOnInit(): void {
-      this.service.getArticles().subscribe((response: TestArticles[]) => {
-          this.articles = response;});
+    // je lance la souscription pour l'affichage des articles via le fichier JSON
+      this.articlesService.getArticles().subscribe((response: Article[]) => {
+          this.articles = response;});            
   }
-  }
+}

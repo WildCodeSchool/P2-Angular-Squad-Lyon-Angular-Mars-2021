@@ -9,7 +9,7 @@ import { FiltersService } from './filters.service';
 })
 export class CalendrierClassementService {
   // Clef API Maxime
-  private apiKey: string = '809b1b3984msh5cad78e9d46098cp169266jsn5b658a9d25d6'
+  private apiKey: string = 'e12317ed8amsh4236a63b97b2a09p193b59jsnd930cc5f007b'
 
   //  Url de l'API
   private urls: string[] = ['https://api-football-v1.p.rapidapi.com/v3/', 'https://api-basketball.p.rapidapi.com/']

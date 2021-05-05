@@ -8,13 +8,6 @@
   display: flex;
 }
 
-/*.autres{
-  
-  justify-items: center;
-  justify-content: center;
-  color: black;
-}*/
-
 ::ng-deep .mat-tab-label {
   height: 27px !important;
   min-height: 5px !important;
@@ -59,7 +52,7 @@ table {
 }
 
 th {
-  height: 70px;
+  height: 10px;
 }
 
 td {
@@ -84,9 +77,11 @@ td {
 
 ::ng-deep .mat-tab {
   background-color: rgb(218, 218, 218);
+  height: 100%;
 }
 
-mat-tab-group {
+::ng-deep .mat-tab-body {
+  height: 100%;
 }
 
 .AucunMatch {

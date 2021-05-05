@@ -9,7 +9,7 @@ import { FiltersService } from '../common/filters.service';
 
 // Définition de l'interface pour le classement
 export interface ClassementElement {
-  P: number
+  P: number;
   CLUBS: string;
   PTS: number;
   J: number;
@@ -70,7 +70,6 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
 
     this.getMatches()
   }
-
 
   // Nécessaire pour la pagination
   @ViewChild(MatPaginator) paginator: MatPaginator;

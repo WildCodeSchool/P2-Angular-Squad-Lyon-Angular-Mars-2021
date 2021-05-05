@@ -1,5 +1,6 @@
 img {
   background-size: cover;
+  width: 100%;
 }
 
 .container-fluid {
@@ -14,9 +15,10 @@ img {
 
 .nomJoueuse {
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
   color: black;
   margin: 15px auto;
+  line-height: 150%;
 }
 .sportJoueuse {
   font-size: 25px;
@@ -30,7 +32,7 @@ img {
 }
 .carousel-caption {
   background-color: white;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .separation {
@@ -38,21 +40,19 @@ img {
   background-color: chartreuse;
 }
 
-@media (max-width: 992px ) {
-  .joueuseDesc{
+@media (max-width: 992px) {
+  .joueuseDesc {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
   .nomJoueuse {
-    background-color: transparent;
-    font-size: 75%;
-    color: slategrey;
-    background-color:white;
-    opacity: 0.8;
+    font-size: 120%;
+    color: rgb(24, 24, 24);
+    background-color: white;
+    padding: auto;
     margin: auto;
-    padding-top: 2%;
   }
   .sportJoueuse {
     display: none;
@@ -62,5 +62,9 @@ img {
   }
   .carousel-caption {
     background-color: transparent;
+  }
+
+  .logo {
+    width: 50%;
   }
 }

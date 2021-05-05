@@ -9,18 +9,22 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
 import { QuisommesnousComponent } from './quisommesnous/quisommesnous.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 
 const route: Routes = [
 
-  { path: '', redirectTo: '/**', pathMatch: 'full' },
+  { path: '', redirectTo: '/football', pathMatch: 'full' },
   { path: 'football', component: FootballComponent },
   { path: 'basketball', component: BasketballComponent },
   { path: 'rugby', component: RugbyComponent },
   { path: 'contact', component: QuisommesnousComponent },
+  { path: 'about', component: QuisommesnousComponent },
   { path: 'news', component: ArticlesListComponent },
-  { path: "**",component: PageNotFoundComponent }
+  { path: "**", component: PageNotFoundComponent },
+  { path: 'articles/:articleID', component: ArticlesComponent },
+
 
 ];
 

@@ -1,5 +1,6 @@
 <main class="calendar">
   <div class="container">
+
     <mat-tab-group>
       <section id="calendrierSection">
         <!------------------ONGLET CALENDRIER------------------->
@@ -11,7 +12,7 @@
           <!-----popup CALENDRIER------>
 
           <mat-form-field color="accent" appearance="fill">
-            <mat-label>Choisissez une date</mat-label>
+            <mat-label><span class="textselect">Choisissez une date</span></mat-label>
             <input matInput [matDatepicker]="picker2" #userDate [(ngModel)]="date" (dateChange)="getDate()" />
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
@@ -41,7 +42,7 @@
           <table class="matchTableau">
             <tbody>
               <div class="no-match" *ngIf="matchesToDisplay.length == 0; else matchesDuJour">
-                <p>Aucun match ce jour</p>
+                <p class="AucunMatch">Aucun match ce jour</p>
               </div>
               <ng-template #matchesDuJour>
                 <tr *ngFor="
@@ -51,7 +52,7 @@
                   <td>
                     {{ match.teams.home.name }}
                   </td>
-                  <td *ngIf="router.url.includes('/football'); else scoreBasket">
+                  <td class="mybold" *ngIf="router.url.includes('/football'); else scoreBasket">
                     {{ match.score.fulltime.home }} -
                     {{ match.score.fulltime.away }}
                   </td>
@@ -66,7 +67,7 @@
               </ng-template>
             </tbody>
           </table>
-          <ngb-pagination [(page)]="page" [pageSize]="5" [collectionSize]="matchesToDisplay.length">
+          <ngb-pagination class="pagination" [(page)]="page" [pageSize]="5" [collectionSize]="matchesToDisplay.length">
           </ngb-pagination>
         </mat-tab>
       </section>

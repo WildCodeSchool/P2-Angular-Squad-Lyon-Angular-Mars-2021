@@ -33,3 +33,27 @@ nav {
   bottom: 0px;
   background: #dd4343;
 }
+
+.autremenu {
+  font-size: 90%;
+  color: rgb(207, 207, 207);
+
+  opacity: 1;
+  -ms-transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  bottom: 0px;
+}
+
+@media (max-width: 767px) {
+  .qsnmenu {
+    font-size: 100%;
+  }
+  .autremenu {
+    font-size: 100%;
+    font-weight: bold;
+    color: rgb(207, 207, 207);
+    width: 30%;
+    background: #ffffff;
+  }
+}

@@ -1,6 +1,7 @@
 <main class="calendar">
   <div class="container">
 
+    <!--SECTION CALENDRIER-->
     <mat-tab-group>
       <section id="calendrierSection">
         <!------------------ONGLET CALENDRIER------------------->
@@ -17,8 +18,8 @@
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
-          <!-----FILTRE CALENDRIER------>
 
+          <!-----FILTRE CALENDRIER PAYS------>
           <div class="filter-container">
             <div class="styled1">
               <select name="pays" #country (change)="changeFilters()" [(ngModel)]="selectedCountry">
@@ -27,7 +28,7 @@
                 </option>
               </select>
             </div>
-
+            <!-----FILTRE CALENDRIER LIGUE------>
             <div class="styled2">
               <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
                 <option value="" selected disabled hidden>Ligue</option>
@@ -73,15 +74,17 @@
           </ngb-pagination>
         </mat-tab>
       </section>
-      <!-------------------ONGLET CLASSEMENT--------------->
+
+      <!--SECTION CLASSMENT-->
       <section id="classementSection">
+        <!-------------------ONGLET CLASSEMENT--------------->
         <mat-tab>
           <ng-template mat-tab-label>
             CLASSEMENT
             <img src="assets/img/imgLogoIcon/trophy.svg" alt="logo" width="23px" height="23px" />
           </ng-template>
 
-          <!-----FILTRE CLASSEMENT------>
+          <!-----FILTRE CLASSEMENT PAYS------>
           <div id="filter-classement" class="filter-container">
             <div class="styled1">
               <select name="pays" #country (change)="changeFilters()" [(ngModel)]="selectedCountry">
@@ -91,6 +94,7 @@
               </select>
             </div>
 
+            <!-----FILTRE CLASSEMENT LIGUE------>
             <div class="styled2">
               <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
                 <option value="" selected disabled hidden>Ligue</option>
@@ -99,6 +103,7 @@
               </select>
             </div>
           </div>
+
           <!-------TABLEAU DE CLASSEMENT---------->
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!-- P Column -->
@@ -131,6 +136,7 @@
               <td mat-cell *matCellDef="let element">{{ element.DIFF }}</td>
             </ng-container>
 
+            <!--PAGINATION MAT TAB-->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </table>

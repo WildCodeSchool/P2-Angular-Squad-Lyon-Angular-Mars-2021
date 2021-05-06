@@ -16,6 +16,7 @@ export class SliderJoueusesComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // On remplit le tableau "joueuses" avec les données du service au moyen de la méthode getJoueuses"
     this.joueuses = this.JoueusesSliderService.getJoueuses();
   }
 

@@ -59,7 +59,6 @@
             <input #nomPrenom="ngModel" type="text" class="form-control" name="name"
               placeholder="Saisissez votre nom & prénom" ngModel required minlength="3" />
             <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
-
             <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
           </div>
         </div>
@@ -72,7 +71,6 @@
             <div *ngIf="form.submitted && email.errors">
               <span class="errors" *ngIf="email.errors?.required">
                 Votre email est requis.</span>
-
               <span class="errors" *ngIf="email.errors?.pattern">Le format de l'email est incorrect.
               </span>
             </div>
@@ -86,7 +84,6 @@
               pattern="^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$" />
             <div *ngIf="form.submitted && telephone.errors">
               <span class="errors" *ngIf="telephone.errors?.required">Le numéro de téléphone est requis.</span>
-
               <span class="errors" *ngIf="telephone.errors?.pattern">Format non valide</span>
             </div>
           </div>

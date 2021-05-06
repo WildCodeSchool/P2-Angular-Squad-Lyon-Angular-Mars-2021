@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  //Définition d'un objet de type date
+  
   date = new Date();
 
   constructor() { }

@@ -6,6 +6,7 @@ import { Joueuse } from './joueuse';
 })
 export class JoueusesSliderService {
 
+  // on déclare un array de type "Joueuse"
   joueusesList: Joueuse[] = [
     {
       sport: 'Rugby',
@@ -34,6 +35,7 @@ export class JoueusesSliderService {
   constructor() {
   }
 
+  // on définit une fonction qui renvoie la liste de joueuses
   getJoueuses() {
     return this.joueusesList;
   }

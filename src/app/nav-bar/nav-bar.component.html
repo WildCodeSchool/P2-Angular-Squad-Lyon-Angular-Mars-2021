@@ -1,4 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white d-flex justify-content-between">
+  <!--Section gauche de la navBar -->
+
+  <!--Logo responsive-->
   <a class="navbar-brand" [routerLink]="['/football']">
     <picture>
       <source srcset="../../assets/img/imgLogoIcon/logoDf.png" media="(min-width: 768px)" />
@@ -6,11 +9,12 @@
         class="d-inline-block align-middle mr-2" />
     </picture>
   </a>
+  <!--Bouton visible en version mobile-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+  <!--Liens-->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -20,6 +24,7 @@
         <a class="nav-link text-dark" [routerLink]="['/basketball']">Basket-ball</a>
       </li>
     </ul>
+     <!--Section droite de la navBar -->
     <ul class="navbar-nav mr-auto ">
       <li class="nav-item qsnmenu  ">
         <a class="nav-link text-dark" [routerLink]="['/about']">Qui sommes-nous</a>

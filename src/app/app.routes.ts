@@ -4,12 +4,10 @@ import { FootballComponent } from './football/football.component';
 import { BasketballComponent } from './basketball/basketball.component';
 import { RugbyComponent } from './rugby/rugby.component';
 
-import { NewsComponent } from './news/news.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
-import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
 import { QuisommesnousComponent } from './quisommesnous/quisommesnous.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ArticlesComponent } from './articles/articles.component';
+import { ArticleInconnuComponent } from './article-inconnu/article-inconnu.component';
 
 
 
@@ -22,8 +20,8 @@ const route: Routes = [
   { path: 'contact', component: QuisommesnousComponent },
   { path: 'about', component: QuisommesnousComponent },
   { path: 'news', component: ArticlesListComponent },
-  { path: "**",component: PageNotFoundComponent },
-  { path: 'articles/:articleID', component: ArticlesComponent},
+  { path: 'articleinconnu', component: ArticleInconnuComponent},
+  { path: "**",component: PageNotFoundComponent }
   
 
 ];

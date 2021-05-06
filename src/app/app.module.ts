@@ -27,7 +27,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import {NgForm} from '@angular/forms'
+import {NgForm} from '@angular/forms';
+import { ArticleInconnuComponent } from './article-inconnu/article-inconnu.component'
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {NgForm} from '@angular/forms'
     RugbyComponent,
     ClassementCalendrierComponent,
     ArticlesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ArticleInconnuComponent
   ],
   imports: [
     BrowserModule,

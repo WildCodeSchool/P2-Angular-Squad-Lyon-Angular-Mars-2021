@@ -8,8 +8,10 @@ import { Article } from '../common/article.model';
   styleUrls: ['./articles-list.component.css'],
 })
 export class ArticlesListComponent implements OnInit {
+  // je crée une variable de type Articles qui va contenir ensuite les données JSON
   public articles: Article[]= [];
 
+  // J'instancie le service
   constructor(public articlesService: ArticlesService) {}
   
   ngOnInit(): void {

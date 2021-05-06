@@ -24,7 +24,7 @@ export class DirectencoursComponent implements OnInit {
       scoreExterieur: 4
     },
     {
-      equipeDomicile: "Guingamp",
+      equipeDomicile: "EAG",
       scoreDomicile: 1,
       equipeExterieur: "Le HAC",
       scoreExterieur: 3
@@ -32,43 +32,43 @@ export class DirectencoursComponent implements OnInit {
     {
       equipeDomicile: "OL",
       scoreDomicile: 3,
-      equipeExterieur: "Montpellier",
+      equipeExterieur: "MHSC",
       scoreExterieur: 2
     },
   ]
 
   matchListBasketFrance: MatchDirect[] = [
     {
-      equipeDomicile: "Flammes Carolo",
+      equipeDomicile: "FC",
       scoreDomicile: 93,
       equipeExterieur: "Lyon",
       scoreExterieur: 121
     },
     {
-      equipeDomicile: "VILLENEUVE D'ASCQ",
+      equipeDomicile: "ASCQ",
       scoreDomicile: 77,
-      equipeExterieur: "MONTPELLIER",
+      equipeExterieur: "MHSC",
       scoreExterieur: 83
     },
     {
-      equipeDomicile: "ROCHE VENDEE",
+      equipeDomicile: "VENDEE",
       scoreDomicile: 82,
-      equipeExterieur: "BASKET LANDES",
+      equipeExterieur: "LANDES",
       scoreExterieur: 85
     },
   ]
 
   matchListBasketItalie: MatchDirect[] = [
     {
-      equipeDomicile: "Venezia F ",
+      equipeDomicile: "Venezia",
       scoreDomicile: 34,
-      equipeExterieur: "Costa Masnaga F",
+      equipeExterieur: "Costa.M",
       scoreExterieur: 57
     },
     {
-      equipeDomicile: "Virtus Bologna F",
+      equipeDomicile: "Bologna F",
       scoreDomicile: 24,
-      equipeExterieur: "San Giovanni F",
+      equipeExterieur: "San.G F",
       scoreExterieur: 18
     },
     {
@@ -81,13 +81,13 @@ export class DirectencoursComponent implements OnInit {
 
   matchListItalie: MatchDirect[] = [
     {
-      equipeDomicile: "Juventus FC",
+      equipeDomicile: "JFC",
       scoreDomicile: 1,
       equipeExterieur: "FBC",
       scoreExterieur: 2
     },
     {
-      equipeDomicile: "AC Milan",
+      equipeDomicile: "AC.M",
       scoreDomicile: 3,
       equipeExterieur: "Bari",
       scoreExterieur: 4
@@ -95,27 +95,27 @@ export class DirectencoursComponent implements OnInit {
     {
       equipeDomicile: "AS Roma",
       scoreDomicile: 1,
-      equipeExterieur: "ACF Fiorentina",
+      equipeExterieur: "ACF",
       scoreExterieur: 2
     },
   ]
   matchListUsa: MatchDirect[] = [
     {
-      equipeDomicile: "Chigaco F",
+      equipeDomicile: "Chigaco",
       scoreDomicile: 3,
-      equipeExterieur: "Washigton F",
+      equipeExterieur: "Denver",
       scoreExterieur: 0
     },
     {
-      equipeDomicile: "Houston Dash F",
+      equipeDomicile: "Houston",
       scoreDomicile: 2,
-      equipeExterieur: "Racing Louisville F",
+      equipeExterieur: "Miami",
       scoreExterieur: 1
     },
     {
-      equipeDomicile: "Reign F",
+      equipeDomicile: "Reign",
       scoreDomicile: 0,
-      equipeExterieur: "Gotham F",
+      equipeExterieur: "Gotham",
       scoreExterieur: 3
     },
   ]
@@ -124,19 +124,19 @@ export class DirectencoursComponent implements OnInit {
     {
       equipeDomicile: "Dallas Wings",
       scoreDomicile: 63,
-      equipeExterieur: "Atlanta Dream",
+      equipeExterieur: "Utah",
       scoreExterieur: 98
     },
     {
       equipeDomicile: "L.A Sparks",
       scoreDomicile: 73,
-      equipeExterieur: "Chicago Sky",
+      equipeExterieur: "Sky",
       scoreExterieur: 122
     },
     {
-      equipeDomicile: "Seattle Storm",
+      equipeDomicile: "Storm",
       scoreDomicile: 45,
-      equipeExterieur: "Las Vegas Aces",
+      equipeExterieur: "Aces",
       scoreExterieur: 41
     },
   ]

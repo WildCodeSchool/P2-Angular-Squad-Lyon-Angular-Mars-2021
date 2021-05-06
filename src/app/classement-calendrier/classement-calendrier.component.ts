@@ -43,8 +43,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   // Ligue que l'utilisateur a selectionné
   public selectedLeague: string = ''
   // Date que l'utilisateur a selectionné
-  public date: Date
-
+  public date
   // Necessaire pour Material
   public dataSource;
 
@@ -54,6 +53,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     // Écoute le changement d'url pour adapter les methodes
     this.activatedRoute.url.subscribe(url => {
+      this.date = this.filtersService.userDate
       this.service.sportCheck()
     })
 
@@ -126,11 +126,12 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
     this.filtersService.getDate(this.date)
     if (this.selectedLeague !== '') {
       this.getMatches()
-    } else { alert('Merci de selectionner une ligue') }
+    } else { alert('Merci de selectionner un pays et une ligue') }
   }
 
   // Sub à la methode du service rendant l'observable contenant les matches pour la date + ligue de l'utilisateur
   getMatches() {
+    this.matchesJournee = '-'
     this.service.getCalendar().subscribe((api_matchs) => {
       this.matchesToDisplay = api_matchs;
       // On verifie si le tableau de matches n'est pas vide
@@ -145,5 +146,9 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
         }
       }
     })
+  }
+  // Verifie si l'utilisateur a bien selectionné un pays avant de selectionner une ligue
+  checkIfEmpty() {
+    this.service.checkIfCountryEmpty(this.selectedCountry)
   }
 }

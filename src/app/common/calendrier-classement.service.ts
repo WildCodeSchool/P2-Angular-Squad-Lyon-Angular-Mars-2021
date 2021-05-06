@@ -97,4 +97,10 @@ export class CalendrierClassementService {
       headers: new HttpHeaders(this.headerOpt),
     }
   }
+  // Verifie sur l'utilisateur a bien selectionné un pays avant de selectionner une ligue
+  checkIfCountryEmpty(country) {
+    if (country === '') {
+      alert('Merci de d\'abord selectionner un pays')
+    }
+  }
 }

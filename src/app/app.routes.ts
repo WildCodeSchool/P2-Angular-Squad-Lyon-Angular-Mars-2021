@@ -8,7 +8,6 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { SliderJoueusesComponent } from './slider-joueuses/slider-joueuses.component';
 import { QuisommesnousComponent } from './quisommesnous/quisommesnous.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ArticlesComponent } from './articles/articles.component';
 
 
 

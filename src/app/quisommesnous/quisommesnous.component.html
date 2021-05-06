@@ -49,11 +49,7 @@
 <!-- Formulaire contact -->
 <section class="container-fluid">
   <div class="formulaire">
-    <form
-      (ngSubmit)="form.valid && onSubmit(form)"
-      #form="ngForm"
-      method="POST"
-    >
+    <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm" method="POST">
       <h1 class="contacterNous">NOUS CONTACTER</h1>
       <hr class="hr-titleH1" />
       <div class="form-row">
@@ -62,11 +58,9 @@
             <label for="name">Nom</label>
             <input #nomPrenom="ngModel" type="text" class="form-control" name="name"
               placeholder="Saisissez votre nom & prénom" ngModel required minlength="3" />
-            <div class="bobo" *ngIf="form.submitted && nomPrenom.errors">
-              <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
+            <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
 
-              <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
-            </div>
+            <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
           </div>
         </div>
         <div class="col-12">
@@ -87,14 +81,13 @@
         <div class="col-12">
           <div class="form-block">
             <label for="tel">Téléphone</label>
-            <input #telephone="ngModel" type="text" class="form-control" name="telephone"
-              placeholder="Saisissez votre numéro" ngModel required minlength="10" maxlength="10" />
+            <input #telephone="ngModel" type="text" class="form-control" name="telephone "
+              placeholder="Saisissez votre numéro" ngModel required minlength="10" maxlength="10"
+              pattern="^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$" />
             <div *ngIf="form.submitted && telephone.errors">
               <span class="errors" *ngIf="telephone.errors?.required">Le numéro de téléphone est requis.</span>
 
-              <span class="errors" *ngIf="telephone.errors?.minlength">10 chiffres requis.</span>
-
-              <span class="errors" *ngIf="telephone.errors?.maxlength">10 chiffres requis.</span>
+              <span class="errors" *ngIf="telephone.errors?.pattern">Format non valide</span>
             </div>
           </div>
         </div>

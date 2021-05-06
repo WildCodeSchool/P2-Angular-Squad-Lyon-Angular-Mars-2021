@@ -3,7 +3,7 @@
 
   <mat-tab-group class="table" *ngIf="route.url.includes('/football'); else matchesBasket">
     <mat-tab label="France">
-      <table *ngFor="let score of matchListFrance">
+      <table *ngFor="let score of matchListFrance" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
             {{ score.equipeDomicile }}</span>
@@ -22,7 +22,7 @@
     </mat-tab>
 
     <mat-tab label="Italie">
-      <table *ngFor="let score of matchListItalie">
+      <table *ngFor="let score of matchListItalie" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
             {{ score.equipeDomicile }}</span>
@@ -41,7 +41,7 @@
     </mat-tab>
 
     <mat-tab label="USA">
-      <table *ngFor="let score of matchListUsa">
+      <table *ngFor="let score of matchListUsa" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
             {{ score.equipeDomicile }}</span>
@@ -62,7 +62,7 @@
   <ng-template #matchesBasket>
     <mat-tab-group class="table">
       <mat-tab label="France">
-        <table *ngFor="let score of matchListBasketFrance">
+        <table *ngFor="let score of matchListBasketFrance" class="match">
           <div class="col-md-12 margintop">
             <span class="col-md-1 matchdirectsize">
               {{ score.equipeDomicile }}</span>
@@ -81,7 +81,7 @@
       </mat-tab>
 
       <mat-tab label="Italie">
-        <table *ngFor="let score of matchListBasketItalie">
+        <table *ngFor="let score of matchListBasketItalie" class="match">
           <div class="col-md-12 margintop">
             <span class="col-md-1 matchdirectsize">
               {{ score.equipeDomicile }}</span>
@@ -100,7 +100,7 @@
       </mat-tab>
 
       <mat-tab label="USA">
-        <table *ngFor="let score of matchListBasketUsa">
+        <table *ngFor="let score of matchListBasketUsa" class="match">
           <div class="col-md-12 margintop">
             <span class="col-md-1 matchdirectsize">
               {{ score.equipeDomicile }}</span>

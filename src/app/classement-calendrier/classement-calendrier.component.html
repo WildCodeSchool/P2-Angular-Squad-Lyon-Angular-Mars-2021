@@ -29,9 +29,10 @@
             </div>
 
             <div class="styled2">
-              <select name="ligue" (change)="getInfos()" [(ngModel)]="selectedLeague">
-                <option value="" selected disabled hidden>Selectionnez une ligue</option>
-                <option *ngFor="let league of leagueFilter" [ngValue]="league.league1.id">{{league.league1.name}}
+              <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
+                <option value="" selected disabled hidden>Ligue</option>
+                <option *ngFor="let league of leagueFilter" [ngValue]="league.league1.id">
+                  {{league.league1.name}}
                 </option>
               </select>
             </div>
@@ -91,7 +92,7 @@
             </div>
 
             <div class="styled2">
-              <select name="ligue" (change)="getInfos()" [(ngModel)]="selectedLeague">
+              <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
                 <option value="" selected disabled hidden>Ligue</option>
                 <option *ngFor="let league of leagueFilter" [ngValue]="league.league1.id">{{league.league1.name}}
                 </option>

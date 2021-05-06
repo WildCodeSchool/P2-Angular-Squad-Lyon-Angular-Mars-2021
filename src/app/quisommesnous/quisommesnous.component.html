@@ -87,7 +87,7 @@
         <div class="col-12">
           <div class="form-block">
             <label for="tel">Téléphone</label>
-            <input #telephone="ngModel" type="text" class="form-control" name="telephone"
+            <input #telephone="ngModel" type="number" class="form-control" name="telephone"
               placeholder="Saisissez votre numéro" ngModel required minlength="10" maxlength="10" />
             <div *ngIf="form.submitted && telephone.errors">
               <span class="errors" *ngIf="telephone.errors?.required">Le numéro de téléphone est requis.</span>

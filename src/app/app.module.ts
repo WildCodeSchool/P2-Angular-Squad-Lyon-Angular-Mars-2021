@@ -11,12 +11,10 @@ import { NewsComponent } from './news/news.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { route } from './app.routes'
-import { ArticlesComponent } from './articles/articles.component';
 
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { FootballComponent } from './football/football.component';
 import { BasketballComponent } from './basketball/basketball.component';
-import { RugbyComponent } from './rugby/rugby.component';
 import { ClassementCalendrierComponent } from './classement-calendrier/classement-calendrier.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,9 +24,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-import {NgForm} from '@angular/forms';
 import { ArticleInconnuComponent } from './article-inconnu/article-inconnu.component'
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -46,16 +43,14 @@ import { ArticleInconnuComponent } from './article-inconnu/article-inconnu.compo
     ArticlesListComponent,
     FootballComponent,
     BasketballComponent,
-    RugbyComponent,
     ClassementCalendrierComponent,
-    ArticlesComponent,
-    PageNotFoundComponent,
-    ArticleInconnuComponent
+    ArticleInconnuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(route, {scrollPositionRestoration: 'top'}),
+    RouterModule.forRoot(route, { scrollPositionRestoration: 'top' }),
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -67,8 +62,8 @@ import { ArticleInconnuComponent } from './article-inconnu/article-inconnu.compo
     MatIconModule,
     HttpClientModule
   ],
-  
-  providers: [],
+
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

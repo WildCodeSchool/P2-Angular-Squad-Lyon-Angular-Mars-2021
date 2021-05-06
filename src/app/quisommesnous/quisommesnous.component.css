@@ -36,6 +36,14 @@
 
 /* Partie L'Equipe de page Qui sommes-nous */
 
+.team-container{
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.team-card{
+  margin-top: 5%;
+}
 .membreequipe {
   flex-direction: column;
   align-items: center;
@@ -56,11 +64,6 @@
   color: gray;
   font-size: 15px;
   font-style: italic;
-}
-
-.team-member-ligne2 {
-  justify-content: center;
-  margin-top: 5%;
 }
 
 /* Partie CONTACTER-NOUS de page Qui sommes-nous */

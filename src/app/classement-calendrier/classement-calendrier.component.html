@@ -1,6 +1,7 @@
 <main class="calendar">
   <div class="container">
-  
+
+    <!--SECTION CALENDRIER-->
     <mat-tab-group>
       <section id="calendrierSection">
         <!------------------ONGLET CALENDRIER------------------->
@@ -12,36 +13,28 @@
           <!-----popup CALENDRIER------>
 
           <mat-form-field color="accent" appearance="fill">
-            <mat-label> <span class="textselect">Choisissez une date</span> </mat-label>
-            <input matInput [matDatepicker]="picker2" />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker2"
-            ></mat-datepicker-toggle>
+            <mat-label><span class="textselect">Choisissez une date</span></mat-label>
+            <input matInput [matDatepicker]="picker2" #userDate [(ngModel)]="selectedDate" (dateChange)="getDate()" />
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
 
-          <!-----FILTRE CALENDRIER------>
-
-          <div class="filter-container ">
-            <div class="styled1 ">
-              <select name="pays" >
-                <option value="" hidden>Pays</option>
-                <option value="france">France</option>
-                <option value="allemagne">Allemagne</option>
-                <option class ="selectsizer" value="espagne">Espagne</option>
-                <option class ="selectsizer" value="angleterre">Angleterre</option>
-                <option class ="selectsizer" value="etats-unis">Etats-Unis</option>
+          <!-----FILTRE CALENDRIER PAYS------>
+          <div class="filter-container">
+            <div class="styled1">
+              <select name="pays" #country (change)="changeFilters()" [(ngModel)]="selectedCountry">
+                <option value="" selected disabled hidden>Pays</option>
+                <option *ngFor="let pays of countryFilter" [ngValue]="pays">{{pays.name}}
+                </option>
               </select>
             </div>
-
-            <div class="styled2 ">
-              <select name="ligue">
-                <option value="" hidden>Ligue</option>
-                 <option value="d1arkema"><span class ="selectsizer" ></span>D1 Arkema</option>
-                <option class ="selectsizer" value="coupefrance">Coupe de France</option>
-                <option class ="selectsizer" value="liguechampion">Ligue des Champions</option>
-                <option class ="selectsizer" value="euro">Euro</option>
+            <!-----FILTRE CALENDRIER LIGUE------>
+            <div class="styled2">
+              <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
+                <option value="" selected disabled hidden>Ligue</option>
+                <option *ngFor="let league of leagueFilter" [ngValue]="league.league1.id">
+                  {{league.league1.name}}
+                </option>
               </select>
             </div>
           </div>
@@ -50,26 +43,26 @@
           <h3>JOURNÉE {{ matchesJournee }}</h3>
           <table class="matchTableau">
             <tbody>
-              <div
-                class="no-match"
-                *ngIf="matchesToDisplay.length == 0; else matchesDuJour"
-              >
+              <div class="no-match" *ngIf="matchesToDisplay.length == 0; else matchesDuJour">
                 <p class="AucunMatch">Aucun match ce jour</p>
               </div>
               <ng-template #matchesDuJour>
-                <tr
-                  *ngFor="
+                <!--Pour la pagination-->
+                <tr *ngFor="
                     let match of matchesToDisplay
                       | slice: (page - 1) * 5:page * 5
-                  "
-                >
+                  ">
                   <td>
                     {{ match.teams.home.name }}
                   </td>
-                  <td class="mybold">
+                  <td class="mybold" *ngIf="router.url.includes('/football'); else scoreBasket">
                     {{ match.score.fulltime.home }} -
                     {{ match.score.fulltime.away }}
                   </td>
+                  <ng-template #scoreBasket>
+                    {{ match.scores.home.total }} -
+                    {{ match.scores.away.total }}
+                  </ng-template>
                   <td>
                     {{ match.teams.away.name }}
                   </td>
@@ -77,50 +70,40 @@
               </ng-template>
             </tbody>
           </table>
-          <ngb-pagination class="pagination"
-            [(page)]="page"
-            [pageSize]="5"
-            [collectionSize]="matchesToDisplay.length"
-          >
+          <ngb-pagination class="pagination" [(page)]="page" [pageSize]="5" [collectionSize]="matchesToDisplay.length">
           </ngb-pagination>
         </mat-tab>
       </section>
-      <!-------------------ONGLET CLASSEMENT--------------->
+
+      <!--SECTION CLASSMENT-->
       <section id="classementSection">
+        <!-------------------ONGLET CLASSEMENT--------------->
         <mat-tab>
           <ng-template mat-tab-label>
             CLASSEMENT
-            <img
-              src="assets/img/imgLogoIcon/trophy.svg"
-              alt="logo"
-              width="23px"
-              height="23px"
-            />
+            <img src="assets/img/imgLogoIcon/trophy.svg" alt="logo" width="23px" height="23px" />
           </ng-template>
 
-          <!-----FILTRE CLASSEMENT------>
+          <!-----FILTRE CLASSEMENT PAYS------>
           <div id="filter-classement" class="filter-container">
             <div class="styled1">
-              <select name="pays">
-                <option value="" hidden>Pays</option>
-                <option value="france">France</option>
-                <option value="allemagne">Allemagne</option>
-                <option value="espagne">Espagne</option>
-                <option value="angleterre">Angleterre</option>
-                <option value="etats-unis">Etats-Unis</option>
+              <select name="pays" #country (change)="changeFilters()" [(ngModel)]="selectedCountry">
+                <option value="" selected disabled hidden>Pays</option>
+                <option *ngFor="let pays of countryFilter" [ngValue]="pays">{{pays.name}}
+                </option>
               </select>
             </div>
 
+            <!-----FILTRE CLASSEMENT LIGUE------>
             <div class="styled2">
-              <select name="ligue">
-                <option value="" hidden>Ligue</option>
-                <option value="d1arkema">D1 Arkema</option>
-                <option value="coupefrance">Coupe de France</option>
-                <option value="liguechampion">Ligue des Champions</option>
-                <option value="euro">Euro</option>
+              <select name="ligue" (change)="getInfos()" (click)="checkIfEmpty()" [(ngModel)]="selectedLeague">
+                <option value="" selected disabled hidden>Ligue</option>
+                <option *ngFor="let league of leagueFilter" [ngValue]="league.league1.id">{{league.league1.name}}
+                </option>
               </select>
             </div>
           </div>
+
           <!-------TABLEAU DE CLASSEMENT---------->
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!-- P Column -->
@@ -153,6 +136,7 @@
               <td mat-cell *matCellDef="let element">{{ element.DIFF }}</td>
             </ng-container>
 
+            <!--PAGINATION MAT TAB-->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </table>

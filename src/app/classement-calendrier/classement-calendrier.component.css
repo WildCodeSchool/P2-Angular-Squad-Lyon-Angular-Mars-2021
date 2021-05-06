@@ -96,7 +96,7 @@ div.styled2 select {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
 }
 ngb-pagination {
   font-size: 10px;
@@ -105,7 +105,9 @@ ngb-pagination {
   justify-content: center;
   align-items: center;
 }
-
+.pagination{
+  align-items: flex-end;
+}
 .AucunMatch {
   text-align: center;
   color: gray;

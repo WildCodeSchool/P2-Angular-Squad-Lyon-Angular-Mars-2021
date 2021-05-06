@@ -5,11 +5,7 @@
     <h1 class="titlequisommesnous">QUI SOMMES-NOUS</h1>
     <hr class="hr-titleH1" />
     <div>
-      <img
-        class="img1-qsn"
-        src="./assets/img/imgQuisommesnous/img1-qsn.png"
-        alt=""
-      />
+      <img class="img1-qsn" src="./assets/img/imgQuisommesnous/img1-qsn.png" alt="" />
     </div>
     <p>
       Direct-Feminin tend à promouvoir le sport féminin et les sportives en leur
@@ -40,55 +36,11 @@
   <div class="container">
     <h1 class="equipe">L' EQUIPE</h1>
     <hr class="hr-titleH1" />
-    <div class="row">
-      <div class="col-md-4 col-xs-12">
-        <img
-          class="col-md-12 img"
-          src="./assets/img/imgQuisommesnous/img3-team.png"
-          alt="image ceo"
-        />
-        <h3 class="team-member-name">Fethi BETTAHAR</h3>
-        <P class="posteoccupe"> Responsable Ressources Humaines </P>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <img
-          class="col-md-12 img"
-          src="./assets/img/imgQuisommesnous/img3-team.png"
-          alt="image ceo"
-        />
-        <h3 class="team-member-name">Hermann ADINSI</h3>
-        <P class="posteoccupe">Président Directeur Général</P>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <img
-          class="imgteam"
-          src="./assets/img/imgQuisommesnous/img2-team.png"
-          class="col-md-12"
-          alt="image ceo"
-        />
-        <h3 class="team-member-name">Rachid Leboukh</h3>
-        <P class="posteoccupe"> Responsable Commercial</P>
-      </div>
-    </div>
-
-    <div class="row team-member-ligne2">
-      <div class="col-md-4 col-xs-12">
-        <img
-          src="./assets/img/imgQuisommesnous/img4-team.png"
-          class="col-md-12"
-          alt="image ceo"
-        />
-        <h3 class="team-member-name">Maxime DIAS</h3>
-        <P class="posteoccupe"> Responsable Informatique</P>
-      </div>
-      <div class="col-md-4 col-xs-12">
-        <img
-          class="col-md-12"
-          src="./assets/img/imgQuisommesnous/img5-team.png"
-          alt="image ceo"
-        />
-        <h3 class="team-member-name">Gabrielle K/BIDI</h3>
-        <P class="posteoccupe"> Responsable Communication</P>
+    <div class="team-container">
+      <div class="col-md-4 col-xs-12 team-card" *ngFor="let member of membersList">
+        <img class="col-md-12 img" [src]="member.img" alt="image {{member.name}}" />
+        <h3 class="team-member-name">{{member.name}}</h3>
+        <P class="posteoccupe"> {{member.role}}</P>
       </div>
     </div>
   </div>
@@ -97,58 +49,32 @@
 <!-- Formulaire contact -->
 <section class="container-fluid">
   <div class="formulaire">
-    <form
-      (ngSubmit)="form.valid && onSubmit(form)"
-      #form="ngForm"
-      method="POST"
-    >
+    <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm" method="POST">
       <h1 class="contacterNous">NOUS CONTACTER</h1>
       <hr class="hr-titleH1" />
       <div class="form-row">
         <div class="col-12">
           <div class="form-block">
             <label for="name">Nom</label>
-            <input
-              #nomPrenom="ngModel"
-              type="text"
-              class="form-control"
-              name="name"
-              placeholder="Saisissez votre nom & prénom"
-              ngModel
-              required
-              minlength="3"
-            />
+            <input #nomPrenom="ngModel" type="text" class="form-control" name="name"
+              placeholder="Saisissez votre nom & prénom" ngModel required minlength="3" />
             <div *ngIf="form.submitted && nomPrenom.errors">
-              <span class="errors" *ngIf="nomPrenom.errors?.required"
-                >Le nom et le prénom sont requis.</span
-              >
-
-              <span class="errors" *ngIf="nomPrenom.errors?.minlength"
-                >Le nom et le prénom sont requis.</span
-              >
+              <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
+              <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="form-block">
             <label for="mail">Adresse mail</label>
-            <input
-              #email="ngModel"
-              type="text"
-              class="form-control"
-              name="email"
-              placeholder="Saisissez votre email"
+            <input #email="ngModel" type="text" class="form-control" name="email" placeholder="Saisissez votre email"
               pattern="^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$"
-              ngModel
-              required
-            />
+              ngModel required />
             <div *ngIf="form.submitted && email.errors">
               <span class="errors" *ngIf="email.errors?.required">
-                Votre email est requis.</span
-              >
+                Votre email est requis.</span>
 
-              <span class="errors" *ngIf="email.errors?.pattern"
-                >Le format de l'email est incorrect.
+              <span class="errors" *ngIf="email.errors?.pattern">Le format de l'email est incorrect.
               </span>
             </div>
           </div>
@@ -156,29 +82,13 @@
         <div class="col-12">
           <div class="form-block">
             <label for="tel">Téléphone</label>
-            <input
-              #telephone="ngModel"
-              type="text"
-              class="form-control"
-              name="telephone"
-              placeholder="Saisissez votre numéro"
-              ngModel
-              required
-              minlength="10"
-              maxlength="10"
-            />
+            <input #telephone="ngModel" type="text" class="form-control" name="telephone "
+              placeholder="Saisissez votre numéro" ngModel required minlength="10" maxlength="10"
+              pattern="^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$" />
             <div *ngIf="form.submitted && telephone.errors">
-              <span class="errors" *ngIf="telephone.errors?.required"
-                >Le numéro de téléphone est requis.</span
-              >
+              <span class="errors" *ngIf="telephone.errors?.required">Le numéro de téléphone est requis.</span>
 
-              <span class="errors" *ngIf="telephone.errors?.minlength"
-                >10 chiffres requis.</span
-              >
-
-              <span class="errors" *ngIf="telephone.errors?.maxlength"
-                >10 chiffres requis.</span
-              >
+              <span class="errors" *ngIf="telephone.errors?.pattern">Format non valide</span>
             </div>
           </div>
         </div>
@@ -187,16 +97,8 @@
         <div class="col-12">
           <div class="form-block">
             <label for="message">Message</label>
-            <textarea
-              #message="ngModel"
-              type="text"
-              class="form-control"
-              name="message"
-              placeholder="Votre message ici..."
-              ngModel
-              required
-              minlength="1"
-            ></textarea>
+            <textarea #message="ngModel" type="text" class="form-control" name="message"
+              placeholder="Votre message ici..." ngModel required minlength="1"></textarea>
             <div class="text-center">
               <button class="btn" (click)="(onSubmit)">Envoyer</button>
             </div>

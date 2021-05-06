@@ -1,71 +1,122 @@
 <div class="backgroundDirectencours">
   <h1 class="directencours">Direct en cours ...</h1>
 
-  <mat-tab-group class="table">
+  <mat-tab-group class="table" *ngIf="route.url.includes('/football'); else matchesBasket">
     <mat-tab label="France">
-      <table *ngFor="let score of matchListFrance">
+      <table *ngFor="let score of matchListFrance" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
-            {{ score.equipeDomicile }}</span
-          >
+            {{ score.equipeDomicile }}</span>
 
           <span class="col-md-1 matchdirectsize">
-            {{ score.scoreDomicile }}</span
-          >
+            {{ score.scoreDomicile }}</span>
           <span class="col-md-12 matchdirectsize"> - </span>
           <span class="col-md-12 matchdirectsize">
-            {{ score.scoreExterieur }}</span
-          >
+            {{ score.scoreExterieur }}</span>
 
           <span class="col-md-1 matchdirectsize">{{
             score.equipeExterieur
-          }}</span>
+            }}</span>
         </div>
       </table>
     </mat-tab>
 
     <mat-tab label="Italie">
-      <table *ngFor="let score of matchListItalie">
+      <table *ngFor="let score of matchListItalie" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
-            {{ score.equipeDomicile }}</span
-          >
+            {{ score.equipeDomicile }}</span>
 
           <span class="col-md-1 matchdirectsize">
-            {{ score.scoreDomicile }}</span
-          >
+            {{ score.scoreDomicile }}</span>
           <span class="col-md-12 matchdirectsize"> - </span>
           <span class="col-md-12 matchdirectsize">
-            {{ score.scoreExterieur }}</span
-          >
+            {{ score.scoreExterieur }}</span>
 
           <span class="col-md-1 matchdirectsize">{{
             score.equipeExterieur
-          }}</span>
+            }}</span>
         </div>
       </table>
     </mat-tab>
 
     <mat-tab label="USA">
-      <table *ngFor="let score of matchListUsa">
+      <table *ngFor="let score of matchListUsa" class="match">
         <div class="col-md-12 margintop">
           <span class="col-md-1 matchdirectsize">
-            {{ score.equipeDomicile }}</span
-          >
+            {{ score.equipeDomicile }}</span>
 
           <span class="col-md-1 matchdirectsize">
-            {{ score.scoreDomicile }}</span
-          >
+            {{ score.scoreDomicile }}</span>
           <span class="col-md-12 matchdirectsize"> - </span>
           <span class="col-md-12 matchdirectsize">
-            {{ score.scoreExterieur }}</span
-          >
+            {{ score.scoreExterieur }}</span>
 
           <span class="col-md-1 matchdirectsize">{{
             score.equipeExterieur
-          }}</span>
+            }}</span>
         </div>
       </table>
     </mat-tab>
   </mat-tab-group>
+  <ng-template #matchesBasket>
+    <mat-tab-group class="table">
+      <mat-tab label="France">
+        <table *ngFor="let score of matchListBasketFrance" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+
+      <mat-tab label="Italie">
+        <table *ngFor="let score of matchListBasketItalie" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+
+      <mat-tab label="USA">
+        <table *ngFor="let score of matchListBasketUsa" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-template>
 </div>

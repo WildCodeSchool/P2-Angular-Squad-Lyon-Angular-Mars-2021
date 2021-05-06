@@ -1,5 +1,6 @@
 img {
   background-size: cover;
+  width: 100%;
 }
 
 .container-fluid {

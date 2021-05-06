@@ -47,7 +47,6 @@ table {
   text-align: center;
   justify-content: space-around;
   font-size: 20px;
-  height: 100%;
   font-size: 12px;
 }
 
@@ -92,6 +91,10 @@ td {
   align-items: center;
   height: 200px;
 }
+.match{
+  font-size: 100%;
+  margin-top: 5%;
+}
 
 @media (max-width: 767px) {
   .AucunMatch {
@@ -102,5 +105,9 @@ td {
     justify-content: center;
     align-items: center;
     height: 200px;
+  }
+  .match{
+    margin-top: 15%;
+    font-size: 70%;
   }
 }

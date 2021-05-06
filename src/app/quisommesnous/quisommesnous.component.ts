@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import Swal from 'sweetalert2'
+import { Membre } from '../common/membre.model';
+import { MembresService } from '../common/membres.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -9,12 +11,21 @@ import Swal from 'sweetalert2'
   styleUrls: ['./quisommesnous.component.css'],
 })
 export class QuisommesnousComponent implements OnInit {
+  // Je crée une variable de type tableau de Membre
+  membersList: Membre[]
   // J'instancie la variable qui va me permettre de customizer l'alerte
-   swal: any;
+  swal: any;
 
-  constructor() {}
+  // J'instancie le service
+  constructor(private membresService: MembresService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // appel de la fonction du service
+    this.membresService.getMembers().subscribe((list: Membre[]) => {
+      this.membersList = list
+    })
+  }
+
 
   onSubmit(form: NgForm) {
     // J'envoie une alerte

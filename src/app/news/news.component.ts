@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TestArticles } from '../common/test-articles';
+import { Article } from '../common/article.model';
 import { ArticlesService } from '../common/articles.service';
 import { Router } from '@angular/router'
 
@@ -10,39 +10,38 @@ import { Router } from '@angular/router'
 })
 export class NewsComponent implements OnInit {
     //je crée ma liste d'articles
-    public articles: TestArticles[] = [];
-    public service: ArticlesService;
-    //
+    public articles: Article[] = [];
+
+    // J'initie un tableau qui va recevoir le résultat de la condition
     public articleBySport = [];
 
+    // J'instancie l'appel au service ArticlesService et au router en créant les deux variables correspondantes
     constructor(public articlesService: ArticlesService, private router: Router) {
-        this.service = articlesService;
     }
 
     // j'appelle le service pour remplir mon tableau d'articles
     ngOnInit(): void {
-        this.service.getArticles().subscribe((response: TestArticles[]) => {
+        this.articlesService.getArticles().subscribe((response: Article[]) => {
             this.articles = response
         });
     }
 
     // J'affiche les articles selon les sports et la page correspondante
     filterBySport() {
+        // Je vérifie si l'url contient football
         if (this.router.url.includes('/football')) {
+            // Je lui demande d'afficher les articles qui ont pour la catégorie "sport" le "foot"
             this.articleBySport = this.articles.filter(item => item.sport === "FOOT")
-            return this.articleBySport;
         }
-        else if (this.router.url.includes('/rugby')) {
-            this.articleBySport = this.articles.filter(item => item.sport === "RUGBY")
-            return this.articleBySport;
-        }
+
+        // Je vérifie si l'url contient le basketball
         else if (this.router.url.includes('/basketball')) {
+            // Je lui demande d'afficher les articles qui ont pour la catégorie "sport" le "basketball"
             this.articleBySport = this.articles.filter(item => item.sport === "BASKETBALL")
-            return this.articleBySport;
         }
-        else if (this.router.url.includes('/tennis')) {
-            this.articleBySport = this.articles.filter(item => item.sport === "TENNIS")
-            return this.articleBySport;
-        }
+
+
+        // Je retourne le résultat via le tableau créé
+        return this.articleBySport;
     }
 }

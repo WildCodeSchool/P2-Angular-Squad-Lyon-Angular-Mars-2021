@@ -1,309 +1,122 @@
-<div class="col-md backgroundDirectencours">
+<div class="backgroundDirectencours">
   <h1 class="directencours">Direct en cours ...</h1>
 
-  <mat-tab-group class="table">
-    <div>
-      <mat-tab label="France">
-        <div *ngIf="listScore.length == 0; else afficherScore">
-          <p class="AucunMatch">Aucun match en cours</p>
+  <mat-tab-group class="table" *ngIf="route.url.includes('/football'); else matchesBasket">
+    <mat-tab label="France">
+      <table *ngFor="let score of matchListFrance" class="match">
+        <div class="col-md-12 margintop">
+          <span class="col-md-1 matchdirectsize">
+            {{ score.equipeDomicile }}</span>
+
+          <span class="col-md-1 matchdirectsize">
+            {{ score.scoreDomicile }}</span>
+          <span class="col-md-12 matchdirectsize"> - </span>
+          <span class="col-md-12 matchdirectsize">
+            {{ score.scoreExterieur }}</span>
+
+          <span class="col-md-1 matchdirectsize">{{
+            score.equipeExterieur
+            }}</span>
         </div>
-        <ng-template #afficherScore>
-          <table *ngFor="let score of listScore">
-            <div class="col-md-12 margintop">
-              <span class="col-md-1 matchdirectsize">
-                {{ score.teams.home.name }}</span
-              >
-
-              <span class="col-md-1 matchdirectsize">
-                {{ score.goals.home }}</span
-              >
-              <span class="col-md-12 matchdirectsize"> - </span>
-              <span class="col-md-12 matchdirectsize">
-                {{ score.goals.away }}</span
-              >
-
-              <span class="col-md-1 matchdirectsize">{{
-                score.teams.away.name
-              }}</span>
-            </div>
-          </table>
-        </ng-template>
-      </mat-tab>
-    </div>
-
-    <table>
-      <div class="col-md-12 margintop">
-        <span class="col-md-1"> PSG</span>
-        <span class="col-md-1"
-          ><img
-            src="assets/img/imgLogoIcon/PSGlogo.png"
-            width="20px"
-            height="20px"
-        /></span>
-        <span class="col-md-1"> 3</span>
-        <span class="col-md-12"> - </span>
-        <span class="col-md-12"> 3</span>
-        <span class="col-md-12"
-          ><img
-            src="assets/img/imgLogoIcon/PSGlogo.png"
-            width="20px"
-            height="20px"
-        /></span>
-        <span class="col-md-1">OL</span>
-      </div>
-    </table>
+      </table>
+    </mat-tab>
 
     <mat-tab label="Italie">
-      <table>
+      <table *ngFor="let score of matchListItalie" class="match">
         <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
+          <span class="col-md-1 matchdirectsize">
+            {{ score.equipeDomicile }}</span>
 
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
+          <span class="col-md-1 matchdirectsize">
+            {{ score.scoreDomicile }}</span>
+          <span class="col-md-12 matchdirectsize"> - </span>
+          <span class="col-md-12 matchdirectsize">
+            {{ score.scoreExterieur }}</span>
 
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img
-              src="assets/img/imgLogoIcon/PSGlogo.png"
-              width="20px"
-              height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-    </mat-tab>
-    <mat-tab label="Brésil">
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-    </mat-tab>
-    <mat-tab label="Cameroun">
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
-
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
+          <span class="col-md-1 matchdirectsize">{{
+            score.equipeExterieur
+            }}</span>
         </div>
       </table>
     </mat-tab>
 
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <mat-form-field appearance="fill">
-          <mat-label class="autres">Autres</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let pays of lesPays" [value]="pays.value">
-              {{ pays.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </ng-template>
-
-      <table>
+    <mat-tab label="USA">
+      <table *ngFor="let score of matchListUsa" class="match">
         <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
+          <span class="col-md-1 matchdirectsize">
+            {{ score.equipeDomicile }}</span>
 
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
-        </div>
-      </table>
+          <span class="col-md-1 matchdirectsize">
+            {{ score.scoreDomicile }}</span>
+          <span class="col-md-12 matchdirectsize"> - </span>
+          <span class="col-md-12 matchdirectsize">
+            {{ score.scoreExterieur }}</span>
 
-      <table>
-        <div class="col-md-12 margintop">
-          <span class="col-md-1"> PSG</span>
-          <span class="col-md-1"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1"> 3</span>
-          <span class="col-md-12"> - </span>
-          <span class="col-md-12"> 3</span>
-          <span class="col-md-12"
-            ><img src="assets/img/PSGlogo.png" width="20px" height="20px"
-          /></span>
-          <span class="col-md-1">OL</span>
+          <span class="col-md-1 matchdirectsize">{{
+            score.equipeExterieur
+            }}</span>
         </div>
       </table>
     </mat-tab>
-
-    <table>
-      <div class="col-md-12 margintop">
-        <span class="col-md-1"> PSG</span>
-        <span class="col-md-1"
-          ><img
-            src="assets/img/imgLogoIcon/PSGlogo.png"
-            width="20px"
-            height="20px"
-        /></span>
-        <span class="col-md-1"> 3</span>
-        <span class="col-md-12"> - </span>
-        <span class="col-md-12"> 3</span>
-        <span class="col-md-12"
-          ><img
-            src="assets/img/imgLogoIcon/PSGlogo.png"
-            width="20px"
-            height="20px"
-        /></span>
-        <span class="col-md-1">OL</span>
-      </div>
-    </table>
   </mat-tab-group>
+  <ng-template #matchesBasket>
+    <mat-tab-group class="table">
+      <mat-tab label="France">
+        <table *ngFor="let score of matchListBasketFrance" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+
+      <mat-tab label="Italie">
+        <table *ngFor="let score of matchListBasketItalie" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+
+      <mat-tab label="USA">
+        <table *ngFor="let score of matchListBasketUsa" class="match">
+          <div class="col-md-12 margintop">
+            <span class="col-md-1 matchdirectsize">
+              {{ score.equipeDomicile }}</span>
+
+            <span class="col-md-1 matchdirectsize">
+              {{ score.scoreDomicile }}</span>
+            <span class="col-md-12 matchdirectsize"> - </span>
+            <span class="col-md-12 matchdirectsize">
+              {{ score.scoreExterieur }}</span>
+
+            <span class="col-md-1 matchdirectsize">{{
+              score.equipeExterieur
+              }}</span>
+          </div>
+        </table>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-template>
 </div>

@@ -1,73 +1,154 @@
+import { DatePipe } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CalendrierClassementService } from '../common/calendrier-classement.service';
+import { FiltersService } from '../common/filters.service';
+
 
 // Définition de l'interface pour le classement
 export interface ClassementElement {
-  P: number
+  P: number;
   CLUBS: string;
   PTS: number;
   J: number;
   DIFF: number;
 }
-
 @Component({
   selector: 'app-classement-calendrier',
   templateUrl: './classement-calendrier.component.html',
-  styleUrls: ['./classement-calendrier.component.css']
+  styleUrls: ['./classement-calendrier.component.css'],
 })
 export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   // Nécessaire pour la pagination matchesDuJour
-  page = 1;
-  matchesToDisplay: any[] = []
-  matchesJournee: string
+  page: number = 1;
+  index: number = 0
 
+  // Macthes à afficher de la partie calendrier
+  matchesToDisplay: any[] = []
+  // Journée/Round du match selectionné
+  matchesJournee: string
   // Définition des colonnes du classement
   displayedColumns: string[] = ['P', 'CLUBS', 'PTS', 'J', 'DIFF'];
+  // Tableau pour le classement
   ELEMENT_DATA: ClassementElement[] = []
 
+  //Liste des pays disponibles dans les filtres
+  public countryFilter: [] = []
+  // Pays que l'utilisateur a selectionné
+  public selectedCountry: string = ''
+  // Liste des ligues disponibles dans les filtres pour le pays specifié
+  public leagueFilter: [] = []
+  // Ligue que l'utilisateur a selectionné
+  public selectedLeague: string = ''
+  // Date que l'utilisateur a selectionné
+  public date
+  // Necessaire pour Material
+  public dataSource;
 
 
-  public dataSource: any;
-  constructor(private service: CalendrierClassementService) { }
+  constructor(private service: CalendrierClassementService, private filtersService: FiltersService, public datePipe: DatePipe, public router: Router, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.getCalendar().subscribe((api_matchs) => {
-      this.matchesToDisplay = api_matchs;
-      if (this.matchesToDisplay.length !== 0) {
-        this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
+    // Écoute le changement d'url pour adapter les methodes
+    this.activatedRoute.url.subscribe(url => {
+      this.date = this.filtersService.userDate
+      this.service.sportCheck()
+    })
+
+    // Change les filtres en fonction de l'url actuelle
+    this.filtersService.getLeagues().subscribe((leagues) => {
+      if (this.router.url.includes('/football')) {
+        this.countryFilter = leagues[0];
+      }
+      else if (this.router.url.includes('/basketball')) {
+        this.countryFilter = leagues[1];
       }
     })
-  }
 
+
+    this.getMatches()
+  }
 
   // Nécessaire pour la pagination
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {
-    // Appel du service
-    this.service.getStanding().subscribe((api_standing) => {
-      // Remplissage du tableau pour chaque équipe présente dans la ligue
-      api_standing.forEach(equipe => {
-        this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
-      });
+    this.getStanding()
+  }
 
+  // Change le filtre ligue en fonction du pays selectionné
+  changeFilters() {
+    // Appel de la fonction du service
+    this.filtersService.getCountry(this.leagueFilter, this.selectedCountry)
+    this.leagueFilter = this.filtersService.leagueFilter
+    this.selectedLeague = this.filtersService.selectedLeague
+  }
+
+  getStanding() {
+    // Reset du tableau à chaque appel
+    this.ELEMENT_DATA = []
+    // Subscribe à l'observable rendu par la methode du service
+    this.service.getStanding().subscribe((api_standing) => {
+      // Changement du endpoint en fonction de la discipline
+      if (this.router.url.includes('/football')) {
+        // Remplissage du tableau pour chaque équipe présente dans la ligue
+        api_standing.league.standings[0].forEach(equipe => {
+          this.ELEMENT_DATA.push({ P: equipe.rank, CLUBS: equipe.team.name, PTS: equipe.points, J: equipe.all.played, DIFF: equipe.goalsDiff })
+        })
+        // Changement du endpoint en fonction de la discipline
+      } else if (this.router.url.includes('/basketball')) {
+        // Remplissage du tableau pour chaque équipe présente dans la ligue
+        api_standing.forEach(equipe => {
+          this.ELEMENT_DATA.push({ P: equipe.position, CLUBS: equipe.team.name, PTS: equipe.group.points, J: equipe.games.played, DIFF: equipe.points.for - equipe.points.against })
+        })
+      }
+
+      // Remplissage de la dataSource avec le tableau contenant le classement
       this.dataSource = new MatTableDataSource<ClassementElement>(this.ELEMENT_DATA)
       // Nécessaire pour la pagination
       this.dataSource.paginator = this.paginator;
     })
 
-
-
   }
-  //  MD - TODO: 
-  //  - Voir si pas possible d'avoir deux paginators material || CSS de la pagination des matches du jour
-  //  - Optimisation (beaucoup de code dans le ts pourrait être passé dans le service imo)
-  //  - Verifications diverses à faire dans le ts et dans le service (si renvoi de requete pas vide etc..)
 
+  // Envoie la ligue selectionné au service et lance la methode getStanding, permettant de faire l'appel à l'API
+  getInfos() {
+    this.filtersService.getInfos(this.selectedLeague)
+    this.getStanding()
+    if (this.date !== undefined) {
+      this.getMatches()
+    }
+  }
 
+  // Envoie la date selectionnée au service et lance la methode getMatches, permettant de faire l'appel à l'API
+  getDate() {
+    this.filtersService.getDate(this.date)
+    if (this.selectedLeague !== '') {
+      this.getMatches()
+    } else { alert('Merci de selectionner un pays et une ligue') }
+  }
 
-
-
-
+  // Sub à la methode du service rendant l'observable contenant les matches pour la date + ligue de l'utilisateur
+  getMatches() {
+    this.matchesJournee = '-'
+    this.service.getCalendar().subscribe((api_matchs) => {
+      this.matchesToDisplay = api_matchs;
+      // On verifie si le tableau de matches n'est pas vide
+      if (this.matchesToDisplay.length !== 0) {
+        // On modifie ce que l'on recupere en fonction de l'url
+        if (this.router.url.includes('/football')) {
+          // L'API rend toute une phrase, on ne veut que le nombre de la journée donc on ne selectionne que ça
+          this.matchesJournee = this.matchesToDisplay[0].league.round.slice(17, 20)
+          // On modifie ce que l'on recupere en fonction de l'url
+        } else if (this.router.url.includes('/basketball')) {
+          this.matchesJournee = this.matchesToDisplay[0].week
+        }
+      }
+    })
+  }
+  // Verifie si l'utilisateur a bien selectionné un pays avant de selectionner une ligue
+  checkIfEmpty() {
+    this.service.checkIfCountryEmpty(this.selectedCountry)
+  }
 }

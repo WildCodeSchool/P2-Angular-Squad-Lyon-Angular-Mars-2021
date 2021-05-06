@@ -25,15 +25,26 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 select {
-  font-size: 1.1rem;
-  text-align: center;
+  font-size: 0.9rem;
   padding: 2px 25px 2px 2px;
   cursor: pointer;
   height: 2.5rem;
   border: none;
   appearance: none;
+}
+
+select {
+  text-align: center;
+  text-align-last: center;
+  /* webkit*/
+}
+option {
+  text-align: left;
+  /* reset to left*/
 }
 
 .select-container {
@@ -44,9 +55,6 @@ select {
 }
 #left {
   margin-right: 1rem;
-}
-#right {
-  margin-left: 1rem;
 }
 
 /* CSS pour l'arrow */
@@ -64,6 +72,7 @@ select {
   border-width: 6px;
   border-style: solid;
   pointer-events: none;
+  font-size: 12px;
 }
 /* Changement de couleur de l'arrow au hover */
 .select-container:hover::after {
@@ -99,6 +108,8 @@ article img {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+  color: gray;
 }
 .sport {
   font-size: 1.2rem;
@@ -108,8 +119,9 @@ article img {
   width: 100%;
   float: left;
   padding: 1rem 1rem 1rem 1rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 400;
+  line-height: 170%;
 }
 
 .hr-article {
@@ -126,7 +138,7 @@ button {
   margin: 3rem;
   padding: 1rem 4rem 1rem 4rem;
   justify-self: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   align-self: center;
   background-color: red;
@@ -157,4 +169,5 @@ button:hover {
     align-self: center;
   }
 }
+
 /* FIN TELEPHONE */

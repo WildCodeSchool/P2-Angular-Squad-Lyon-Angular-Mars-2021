@@ -3,10 +3,11 @@
     <div>
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let joueuse of joueuses">
-          <img [src]="joueuse.img" alt="slide joueuses" class="img-fluid" style="width: 100%;max-height: 700px;">
+          <img [src]="joueuse.img" alt="slide joueuses" class="img-fluid">
           <div id="carousel-caption" class="carousel-caption">
             <div class="nomJoueuse">
-              <p><span style="font-weight: bold;">{{joueuse.nom | uppercase}}</span><span class="joueuseDesc"> - {{joueuse.desc}}</span></p>
+              <p><span style="font-weight: bold;">{{joueuse.nom | uppercase}}</span><span class="joueuseDesc"> -
+                  {{joueuse.desc}}</span></p>
             </div>
             <div class="separation">
             </div>

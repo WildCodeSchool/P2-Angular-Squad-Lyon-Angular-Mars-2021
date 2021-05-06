@@ -1,10 +1,11 @@
 [{
 "link": "#",
-"id": "FOOT1",
+"id": 1,
 "img": "../../assets/img/imgArticleS/article1.jpg",
 "sport": "FOOT",
 "date": "15/04/2021",
 "desc": "Doublé pour Nikita Parris ce week-end",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -15,8 +16,9 @@
     "sport": "FOOT",
     "date": "15/04/2021",
     "desc": "Victoire et qualification en Finale pour l'OL",
-    "content": "xxxxx"
-    },
+    "content": "xxxxx",
+    "pays": "France"
+},
     
     {
     "link": "#",
@@ -25,7 +27,8 @@
     "sport": "FOOT",
     "date": "15/04/2021",
     "desc": "L'OL perd de son avance après sa défaite face au PSG",
-    "content": "xxxxx"
+    "content": "xxxxx",
+    "pays": "France"
     },
 
 {
@@ -35,6 +38,7 @@
 "sport": "RUGBY",
 "date": "24/04/2021",
 "desc": "L'Angleterre remporte le tournoi des VI Nations féminin",
+"pays": "Angleterre",
 "content": "xxxxx"
 },
 
@@ -45,6 +49,7 @@
 "sport": "RUGBY",
 "date": "15/04/2021",
 "desc": "Boulard : une nouvelle pépite pour le XV de France",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -55,6 +60,7 @@
 "sport": "RUGBY",
 "date": "17/04/2021",
 "desc": "Victoires écrasantes du XV de France face au Pays de Galles et face à l'Irlande",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -65,6 +71,7 @@
 "sport": "BASKETBALL",
 "date": "10/04/2021",
 "desc": "En route pour Tokyo : Qui seront les basketteuses tricolores à partir pour Tokyo ?",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -75,6 +82,7 @@
 "sport": "BASKETBALL",
 "date": "23/04/2021",
 "desc": "Basket : Coupe de France (F) : Bourges affronte Montpellier pour une place en finale",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -86,6 +94,7 @@
 "sport": "BASKETBALL",
 "date": "24/04/2021",
 "desc": "EuroLeague Women : L’ASVEL Féminin quasiment éliminée",
+"pays": "France",
 "content": "xxxxx"
 },
 
@@ -96,7 +105,8 @@
 "sport": "TENNIS",
 "date": "20/04/2021",
 "desc": "Naomi Osaka devient la sportive la mieux payée de l’histoire",
-"content": "xxxxx"
+"pays": "Japon",
+"content": "xxxxxxx"
 },
 
 {
@@ -106,6 +116,7 @@
 "sport": "TENNIS",
 "date": "21/04/2021",
 "desc": "WTA Adelaïde : Iga Swiatek remporte un deuxième titre après Roland Garros",
+"pays": "Pologne",
 "content": "xxxxx"
 },
 
@@ -116,5 +127,6 @@
 "sport": "TENNIS",
 "date": "23/04/2021",
 "desc": "Caroline Garcia éliminée, plus de Françaises en lice à Dubaï",
+"pays": "France",
 "content": "xxxxx"
 }]

@@ -1,13 +1,12 @@
+/*Direct en cours */
 .backgroundDirectencours {
   background-color: gainsboro;
   height: 550px;
   box-shadow: 0 0 13px;
 }
-
 .flex5elements {
   display: flex;
 }
-
 ::ng-deep .mat-tab-label {
   height: 27px !important;
   min-height: 5px !important;
@@ -15,7 +14,6 @@
   width: 100% !important;
   min-width: 5px !important;
 }
-
 ::ng-deep .mat-form-field {
   width: 50%;
   background-color: rgb(218, 218, 218);
@@ -82,7 +80,11 @@ td {
 ::ng-deep .mat-tab-body {
   height: 100%;
 }
-
+.match {
+  font-size: 100%;
+  margin-top: 5%;
+}
+/*texte aucun match en cas d'aucun match en cours */
 .AucunMatch {
   text-align: center;
   color: gray;
@@ -91,11 +93,8 @@ td {
   align-items: center;
   height: 200px;
 }
-.match{
-  font-size: 100%;
-  margin-top: 5%;
-}
 
+/*Responsive */
 @media (max-width: 767px) {
   .AucunMatch {
     text-align: center;
@@ -106,7 +105,7 @@ td {
     align-items: center;
     height: 200px;
   }
-  .match{
+  .match {
     margin-top: 15%;
     font-size: 70%;
   }

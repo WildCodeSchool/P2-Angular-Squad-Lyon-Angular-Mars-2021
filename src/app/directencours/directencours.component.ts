@@ -1,9 +1,10 @@
+  // les imports//
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatchDirect } from '../common/match.model';
 
-
+ // Déclaration variables //
 interface Direct {
   value: string;
   viewValue: string;
@@ -16,6 +17,7 @@ interface Direct {
 
 export class DirectencoursComponent implements OnInit {
 
+  // Jeu de données//
   matchListFrance: MatchDirect[] = [
     {
       equipeDomicile: "PSG",
@@ -140,6 +142,7 @@ export class DirectencoursComponent implements OnInit {
       scoreExterieur: 41
     },
   ]
+ // J'instancie la variable de Router//
   constructor(public route: Router) {
   }
 

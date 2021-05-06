@@ -1,7 +1,11 @@
+<!-- Bloc Direct en cours -->
 <div class="backgroundDirectencours">
-  <h1 class="directencours">Direct en cours ...</h1>
 
+  <!-- Titre direct en cours sur le bloc-->
+  <h1 class="directencours">Direct en cours ...</h1>
+  <!-- score en direct pour chaque pays-->
   <mat-tab-group class="table" *ngIf="route.url.includes('/football'); else matchesBasket">
+   <!-- score en direct Foot  pour la France-->
     <mat-tab label="France">
       <table *ngFor="let score of matchListFrance" class="match">
         <div class="col-md-12 margintop">
@@ -20,7 +24,7 @@
         </div>
       </table>
     </mat-tab>
-
+    <!-- score en direct Foot pour l'Italie-->
     <mat-tab label="Italie">
       <table *ngFor="let score of matchListItalie" class="match">
         <div class="col-md-12 margintop">
@@ -39,7 +43,7 @@
         </div>
       </table>
     </mat-tab>
-
+    <!-- score en direct Foot pour les USA-->
     <mat-tab label="USA">
       <table *ngFor="let score of matchListUsa" class="match">
         <div class="col-md-12 margintop">
@@ -59,8 +63,13 @@
       </table>
     </mat-tab>
   </mat-tab-group>
+
+
+    <!-- score en direct pour Basketball par pays-->
   <ng-template #matchesBasket>
     <mat-tab-group class="table">
+
+        <!-- score en direct Basketball France -->
       <mat-tab label="France">
         <table *ngFor="let score of matchListBasketFrance" class="match">
           <div class="col-md-12 margintop">
@@ -79,7 +88,7 @@
           </div>
         </table>
       </mat-tab>
-
+      <!-- score en direct Basketball Italie -->
       <mat-tab label="Italie">
         <table *ngFor="let score of matchListBasketItalie" class="match">
           <div class="col-md-12 margintop">
@@ -98,7 +107,7 @@
           </div>
         </table>
       </mat-tab>
-
+      <!-- score en direct Basketball USA -->
       <mat-tab label="USA">
         <table *ngFor="let score of matchListBasketUsa" class="match">
           <div class="col-md-12 margintop">

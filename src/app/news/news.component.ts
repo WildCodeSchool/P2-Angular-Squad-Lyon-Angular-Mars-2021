@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit {
     }
 
     // J'affiche les articles selon les sports et la page correspondante
-    filterBySport() {
+    filterBySport(): any[] {
         // Je vérifie si l'url contient football
         if (this.router.url.includes('/football')) {
             // Je lui demande d'afficher les articles qui ont pour la catégorie "sport" le "foot"

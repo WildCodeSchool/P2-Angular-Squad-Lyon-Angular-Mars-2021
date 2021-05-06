@@ -5,12 +5,12 @@
   <div class="articlesList" *ngIf="filterBySport()">
     <!-- Création de la structure pour chaque article dans la liste -->
     <article class="article" *ngFor="let article of articleBySport">
-      <a [routerLink] = "['/articles/{{article.id}}']">
+      <a [routerLink]="['/articleinconnu']">
         <div class="img">
           <img [src]="article.img" alt="Image de l'article" />
         </div>
         <div class="sport-date">
-          <div class="sport" >{{ article.sport }}</div>
+          <div class="sport">{{ article.sport }}</div>
           <div class="date">{{ article.date }}</div>
         </div>
         <hr class="hr-article" />

@@ -1,4 +1,4 @@
-/* TITRE ERREUR ARTICLE INCONNU */
+/* TITRE ERREUR 404 */
 h2 {
   font-size: 80px;
   padding: 10px;
@@ -9,7 +9,7 @@ h2 {
 .hr-erreur {
   text-align: center;
   border: 2px solid red;
-  width: 40%;
+  width: 55%;
 }
 
 /* TEXTE */

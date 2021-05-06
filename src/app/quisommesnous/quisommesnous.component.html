@@ -58,9 +58,10 @@
             <label for="name">Nom</label>
             <input #nomPrenom="ngModel" type="text" class="form-control" name="name"
               placeholder="Saisissez votre nom & prénom" ngModel required minlength="3" />
-            <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
-
-            <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
+            <div *ngIf="form.submitted && nomPrenom.errors">
+              <span class="errors" *ngIf="nomPrenom.errors?.required">Le nom et le prénom sont requis.</span>
+              <span class="errors" *ngIf="nomPrenom.errors?.minlength">Le nom et le prénom sont requis.</span>
+            </div>
           </div>
         </div>
         <div class="col-12">

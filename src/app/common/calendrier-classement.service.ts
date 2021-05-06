@@ -69,7 +69,7 @@ export class CalendrierClassementService {
   }
 
   // Changement des variables en fonction de l'url + Initialisation des valeurs à l'arrivée du site
-  sportCheck() {
+  sportCheck(): void {
     if (this.router.url.includes('/footbal')) {
       this.filtersService.selectedLeague = '64'
       this.filtersService.userDate = '2021-05-01'
@@ -98,7 +98,7 @@ export class CalendrierClassementService {
     }
   }
   // Verifie sur l'utilisateur a bien selectionné un pays avant de selectionner une ligue
-  checkIfCountryEmpty(country) {
+  checkIfCountryEmpty(country: string): void {
     if (country === '') {
       alert('Merci de d\'abord selectionner un pays')
     }

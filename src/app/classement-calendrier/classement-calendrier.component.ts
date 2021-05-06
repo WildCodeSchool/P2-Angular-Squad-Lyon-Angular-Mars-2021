@@ -73,19 +73,19 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
 
   // Nécessaire pour la pagination
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.getStanding()
   }
 
   // Change le filtre ligue en fonction du pays selectionné
-  changeFilters() {
+  changeFilters(): void {
     // Appel de la fonction du service
     this.filtersService.getCountry(this.leagueFilter, this.selectedCountry)
     this.leagueFilter = this.filtersService.leagueFilter
     this.selectedLeague = this.filtersService.selectedLeague
   }
 
-  getStanding() {
+  getStanding(): void {
     // Reset du tableau à chaque appel
     this.ELEMENT_DATA = []
     // Subscribe à l'observable rendu par la methode du service
@@ -113,7 +113,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   }
 
   // Envoie la ligue selectionné au service et lance la methode getStanding, permettant de faire l'appel à l'API
-  getInfos() {
+  getInfos(): void {
     this.filtersService.getInfos(this.selectedLeague)
     this.getStanding()
     if (this.selectedDate !== undefined) {
@@ -122,7 +122,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   }
 
   // Envoie la date selectionnée au service et lance la methode getMatches, permettant de faire l'appel à l'API
-  getDate() {
+  getDate(): void {
     this.filtersService.getDate(this.selectedDate)
     if (this.selectedLeague !== '') {
       this.getMatches()
@@ -130,7 +130,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
   }
 
   // Sub à la methode du service rendant l'observable contenant les matches pour la date + ligue de l'utilisateur
-  getMatches() {
+  getMatches(): void {
     this.matchesJournee = '-'
     this.service.getCalendar().subscribe((api_matchs) => {
       this.matchesToDisplay = api_matchs;
@@ -148,7 +148,7 @@ export class ClassementCalendrierComponent implements AfterViewInit, OnInit {
     })
   }
   // Verifie si l'utilisateur a bien selectionné un pays avant de selectionner une ligue
-  checkIfEmpty() {
+  checkIfEmpty(): void {
     this.service.checkIfCountryEmpty(this.selectedCountry)
   }
 }

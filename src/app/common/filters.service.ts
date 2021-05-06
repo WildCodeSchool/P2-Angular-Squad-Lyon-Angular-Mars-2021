@@ -24,7 +24,7 @@ export class FiltersService {
     return obsLeagues.pipe(map(leagues))
   }
   // Change le filtre ligue en fonction du pays selectionné
-  getCountry(leagueFilter, selectedCountry) {
+  getCountry(leagueFilter, selectedCountry): void {
     // Réinitialisation du filtre des ligues
     leagueFilter = []
     leagueFilter.push(selectedCountry)
@@ -33,11 +33,11 @@ export class FiltersService {
     this.selectedLeague = ''
   }
 
-  getInfos(selectedLeague: string) {
+  getInfos(selectedLeague: string): void {
     this.selectedLeague = selectedLeague
   }
 
-  getDate(date: Date) {
+  getDate(date: Date): void {
     // Changement du format de la date pour la requette API
     this.userDate = this.datePipe.transform(date, 'yyyy-MM-dd')
   }
